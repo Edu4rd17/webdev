@@ -3,8 +3,8 @@
 {% block title %}Menu{% endblock %}
 
 {% block body %}
-    {% if app.user %}
-        <h1>Product index</h1>
+    {% if is_granted('ROLE_ADMIN') %}
+        <h1>Welcome Admin!</h1>
 
         <table class="table">
             <thead>
@@ -39,5 +39,61 @@
         </table>
 
         <a href="{{ path('app_product_new') }}">Create new</a>
+    {% else %}
+        <div class="container">
+            <div class="menu">
+                <h2 class="menu-group-heading">
+                    Entree
+                </h2>
+                <div class="menu-group">
+                    {% for product in products %}
+                        <div class="menu-item">
+                            <img src="../images/pizza.jpg" alt="Pizza" class="menu-item-image">
+                            <div class="menu-item-text">
+                                <h3 class="menu-item-heading">
+                                    <span class="menu-item-name">{{ product.productName }}</span>
+                                    <span class="menu-item-price">{{ product.productPrice }}</span>
+                                </h3>
+                                <p class="menu-item-description">
+                                    {{ product.productDescription }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="menu">
+                <h2 class="menu-group-heading">
+                    Starters
+                </h2>
+                <div class="menu-group">
+                    {% for product in products %}
+                        <div class="menu-item">
+                            <img src="../images/pizza.jpg" alt="Pizza" class="menu-item-image">
+                            <div class="menu-item-text">
+                                <h3 class="menu-item-heading">
+                                    <span class="menu-item-name">{{ product.productName }}</span>
+                                    <span class="menu-item-price">{{ product.productPrice }}</span>
+                                </h3>
+                                <p class="menu-item-description">
+                                    {{ product.productDescription }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        {#            #}{#        {% else %} #}
+        {#            #}{#            <tr> #}
+        {#            #}{#                <td colspan="6">no records fnd</td> #}
+        {#            #}{#            </tr> #}
     {% endif %}
 {% endblock %}

@@ -23,15 +23,15 @@ class AppFixtures extends Fixture
             'role' => 'ROLE_ADMIN'
         ]);
 
-//        UserFactory::createOne([
-//            'firstname' => 'Eduard',
-//            'firstname' => 'Eduard',
-//            'username' => 'john',
-//            'password' => 'doe',
-//            'firstname' => 'Eduard',
-//            'firstname' => 'Eduard',
-//            'role' => 'ROLE_ADMIN'
-//        ]);
+        UserFactory::createOne([
+            'firstname' => 'Eduard',
+            'lastname' => 'Eduard',
+            'username' => 'john',
+            'password' => '11111111',
+            'email' => 'Eduard@gmail.com',
+            'phone' => '646356456456',
+            'role' => 'ROLE_USER'
+        ]);
 
     }
 }
