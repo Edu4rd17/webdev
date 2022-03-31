@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Product;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,6 +19,7 @@ class BasketController extends AbstractController
     }
 
     #[Route('/basket', name: 'app_basket')]
+    #[IsGranted('ROLE_USER')]
     public function index(): Response
     {
         $template = 'basket/index.html.twig';
