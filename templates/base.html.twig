@@ -5,6 +5,7 @@
     <style>
         @import "/../stylesheets/common.css";
         @import "/../stylesheets/menu.css";
+        @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
     </style>
     <title>{% block title %}{% endblock %}</title>
     <script src="/../javascript/script.js" defer></script>
@@ -29,7 +30,7 @@
 
 </head>
 <body>
-<header>
+<header class="navigation-bar">
     <nav class="navbar">
         <div class="nav-branding">Edya Restaurant</div>
         <ul class="nav-menu">
@@ -76,13 +77,13 @@
     </nav>
 </header>
 
-{#<div class="container">#}
-{#    <div class="row">#}
-{#        <div class="col-sm-12">#}
-            {% block body %}{% endblock %}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
+{# <div class="container"> #}
+{#    <div class="row"> #}
+{#        <div class="col-sm-12"> #}
+{% block body %}{% endblock %}
+{#        </div> #}
+{#    </div> #}
+{# </div> #}
 
 </body>
 </html>

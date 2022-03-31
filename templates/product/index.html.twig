@@ -40,57 +40,92 @@
 
         <a href="{{ path('app_product_new') }}">Create new</a>
     {% else %}
-        <div class="container">
-            <div class="menu">
-                <h2 class="menu-group-heading">
-                    Entree
-                </h2>
-                <div class="menu-group">
-                    {% for product in products %}
-                        <div class="menu-item">
-                            <img src="../images/pizza.jpg" alt="Pizza" class="menu-item-image">
-                            <div class="menu-item-text">
-                                <h3 class="menu-item-heading">
-                                    <span class="menu-item-name">{{ product.productName }}</span>
-                                    <span class="menu-item-price">{{ product.productPrice }}</span>
-                                </h3>
-                                <p class="menu-item-description">
-                                    {{ product.productDescription }}
-                                </p>
-                            </div>
+        <div class="page-container">
+            <section id="top-page">
+                <article>
+                    <h2>Lets see the menu!</h2>
+                </article>
+            </section>
+            <nav class="food-menu-navbar">
+                <a href="#top-page">See Menu</a>
+                <a href="#entree">Entree</a>
+                <a href="#main">Main</a>
+                <a href="#deserts">Deserts</a>
+            </nav>
+            <div class="menu-container">
+                <section id="entree">
+                    <div class="menu">
+                        <div class="menu-group-holder">
+                            <h1 class="menu-group-heading">Entree</h1>
                         </div>
-                    {% endfor %}
-                </div>
-            </div>
+                        <div class="menu-group">
+                            {% for product in products %}
+                                <div class="menu-item">
+                                    <img src="../images/pizza.jpg" alt="Pizza" class="menu-item-image">
+                                    <div class="menu-item-text">
+                                        <h3 class="menu-item-heading">
+                                            <span class="menu-item-name">{{ product.productName }}</span>
+                                            <span class="menu-item-price">€{{ product.productPrice }}</span>
+                                        </h3>
+                                        <p class="menu-item-description">
+                                            {{ product.productDescription }}
+                                        </p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
 
-            <div class="menu">
-                <h2 class="menu-group-heading">
-                    Starters
-                </h2>
-                <div class="menu-group">
-                    {% for product in products %}
-                        <div class="menu-item">
-                            <img src="../images/pizza.jpg" alt="Pizza" class="menu-item-image">
-                            <div class="menu-item-text">
-                                <h3 class="menu-item-heading">
-                                    <span class="menu-item-name">{{ product.productName }}</span>
-                                    <span class="menu-item-price">{{ product.productPrice }}</span>
-                                </h3>
-                                <p class="menu-item-description">
-                                    {{ product.productDescription }}
-                                </p>
-                            </div>
+                <section id="main">
+                    <div class="menu">
+                        <div class="menu-group-holder">
+                            <h1 class="menu-group-heading">Main</h1>
                         </div>
-                    {% endfor %}
-                </div>
+                        <div class="menu-group">
+                            {% for product in products %}
+                                <div class="menu-item">
+                                    <img src="../images/pizza.jpg" alt="Pizza" class="menu-item-image">
+                                    <div class="menu-item-text">
+                                        <h3 class="menu-item-heading">
+                                            <span class="menu-item-name">{{ product.productName }}</span>
+                                            <span class="menu-item-price">€{{ product.productPrice }}</span>
+                                        </h3>
+                                        <p class="menu-item-description">
+                                            {{ product.productDescription }}
+                                        </p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+
+                <section id="deserts">
+                    <div class="menu">
+                        <div class="menu-group-holder">
+                            <h1 class="menu-group-heading">Deserts</h1>
+                        </div>
+                        <div class="menu-group">
+                            {% for product in products %}
+                                <div class="menu-item">
+                                    <img src="../images/pizza.jpg" alt="Pizza" class="menu-item-image">
+                                    <div class="menu-item-text">
+                                        <h3 class="menu-item-heading">
+                                            <span class="menu-item-name">{{ product.productName }}</span>
+                                            <span class="menu-item-price">€{{ product.productPrice }}</span>
+                                        </h3>
+                                        <p class="menu-item-description">
+                                            {{ product.productDescription }}
+                                        </p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
-
-
-
-
-
-
         {#            #}{#        {% else %} #}
         {#            #}{#            <tr> #}
         {#            #}{#                <td colspan="6">no records fnd</td> #}

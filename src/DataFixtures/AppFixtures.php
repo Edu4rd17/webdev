@@ -7,8 +7,6 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
 use App\Factory\UserFactory;
-use App\Factory\MakeFactory;
-use App\Factory\PhoneFactory;
 
 class AppFixtures extends Fixture
 {
@@ -37,21 +35,21 @@ class AppFixtures extends Fixture
         ProductFactory::createOne([
             'product_name' => 'Steak',
             'product_price' => 14.99,
-            'is_available'=> true,
+            'is_available' => true,
             'product_description' => 'Delicious steak with vegetables.'
         ]);
 
         ProductFactory::createOne([
             'product_name' => 'Pancakes',
             'product_price' => 6.99,
-            'is_available'=> true,
+            'is_available' => true,
             'product_description' => 'Delicious steak with vegetables.'
         ]);
 
         ProductFactory::createOne([
             'product_name' => 'Soup',
             'product_price' => 4.99,
-            'is_available'=> false,
+            'is_available' => false,
             'product_description' => 'Delicious steak with vegetables.'
         ]);
 
