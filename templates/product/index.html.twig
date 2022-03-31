@@ -14,6 +14,7 @@
                 <th>ProductPrice</th>
                 <th>IsAvailable</th>
                 <th>ProductDescription</th>
+                <th>ProductCategory</th>
                 <th>actions</th>
             </tr>
             </thead>
@@ -25,6 +26,7 @@
                     <td>{{ product.productPrice }}</td>
                     <td>{{ product.isAvailable ? 'Yes' : 'No' }}</td>
                     <td>{{ product.productDescription }}</td>
+                    <td>{{ product.category }}</td>
                     <td>
                         <a href="{{ path('app_product_show', {'id': product.id}) }}">show</a>
                         <a href="{{ path('app_product_edit', {'id': product.id}) }}">edit</a>

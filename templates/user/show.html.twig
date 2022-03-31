@@ -23,10 +23,10 @@
             <th>Username</th>
             <td>{{ user.username }}</td>
         </tr>
-{#        <tr>#}
-{#            <th>Password</th>#}
-{#            <td>{{ user.password }}</td>#}
-{#        </tr>#}
+        {#        <tr> #}
+        {#            <th>Password</th> #}
+        {#            <td>{{ user.password }}</td> #}
+        {#        </tr> #}
         <tr>
             <th>Email</th>
             <td>{{ user.email }}</td>
@@ -35,6 +35,12 @@
             <th>Phone</th>
             <td>{{ user.phone }}</td>
         </tr>
+        {% if is_granted('ROLE_ADMIN') %}
+            <tr>
+                <th>Role</th>
+                <td>{{ user.role }}</td>
+            </tr>
+        {% endif %}
         {#        <tr> #}
         {#            <th>Role</th> #}
         {#            <td>{{ user.role }}</td> #}
