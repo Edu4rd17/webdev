@@ -68,6 +68,11 @@
                     <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
                 </li>
             {% endif %}
+            {% if app.user %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_basket') }}">Basket</a>
+                </li>
+            {% endif %}
         </ul>
         <div class="hamburger">
             <span class="bar"></span>

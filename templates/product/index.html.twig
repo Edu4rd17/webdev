@@ -72,6 +72,9 @@
                                         <p class="menu-item-description">
                                             {{ product.productDescription }}
                                         </p>
+                                        <p>
+                                            <a href="{{ path('add_basket', {'id': product.id}) }}">Add to basket</a>
+                                        </p>
                                     </div>
                                 </div>
                             {% endfor %}
