@@ -35,19 +35,21 @@
 </head>
 <body>
 <header class="header" id="header">
-    <a class="logo"><i class="fas fa-mask"></i>Bolshoi</a>
+    <p class="logo"><i class="fas fa-mask"></i>Fuerza</p>
     <nav class="navbar">
-        <a href="{{ path("default") }}">Home</a>
-        <a href="{{ path("app_product_index") }}">Menu</a>
-        {% if app.user == false %}
-            <a href="{{ path("app_login") }}">Login</a>
-            <a href="{{ path("app_register") }}">Register</a>
-        {% endif %}
-        {% if app.user %}
-            <a href="{{ path('user_show', {'id': app.user.id}) }}">{{ app.user.firstname }}</a>
-            <a href="{{ path('app_logout') }}">Logout</a>
-            <a href="{{ path('app_basket') }}">Basket</a>
-        {% endif %}
+        {% block navbar %}
+            <a href="{{ path("default") }}">Home</a>
+            <a href="{{ path("app_product_index") }}">Menu</a>
+            {% if app.user == false %}
+                <a href="{{ path("app_login") }}">Login</a>
+                <a href="{{ path("app_register") }}">Register</a>
+            {% endif %}
+            {% if app.user %}
+                <a href="{{ path('user_show', {'id': app.user.id}) }}">{{ app.user.firstname }}</a>
+                <a href="{{ path('app_logout') }}">Logout</a>
+                <a href="{{ path('app_basket') }}">Basket</a>
+            {% endif %}
+        {% endblock %}
     </nav>
     <div id="menu-btn" class="fa-solid fa-bars fa-2x">
     </div>
@@ -59,6 +61,8 @@
 {#        </div> #}
 {#    </div> #}
 {# </div> #}
-
+{# <footer> #}
+{#    <img src="/images/pizza.jpg" > #}
+{# </footer> #}
 </body>
 </html>

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    /*vertical-align: baseline;*/
+    background: transparent;
+}
+
+.login-page-container {
+    padding-top: 50px;
+}
+
+.login-form-wrapper {
+    max-width: 800px;
+    width: 100%;
+    margin: 15px auto;
+    box-shadow: 2px 1px 20px rgba(0, 0, 0, 0.125);
+    padding: 20px;
+    font-family: 'Arvo', serif;
+}
+
+.login-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: cadetblue;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.login-form {
+    padding: 18px;
+    /*border: 2px solid cadetblue;*/
+    width: 100%;
+}
+
+.input-field-login {
+    margin-bottom: 15px;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+    color: #757575;
+}
+
+.input-field-login label {
+    width: 200px;
+    color: #757575;
+    font-size: 18px;
+}
+
+.login-input {
+    width: 100%;
+    outline: none;
+    border: 1px solid #d5dbd9;
+    font-size: 15px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.input-field-login .login-input:focus {
+    border: 1px solid red;
+}
+
+.remember-me-container {
+    float: left;
+}
+
+.remember-me-container label {
+    display: inline-block;
+    font-size: 18px;
+}
+
+.forgot-pass {
+    display: inline-block;
+    float: right;
+    border: 0;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+.login-button-wrapper {
+    text-align: center;
+    padding-top: 5px;
+    width: 100%;
+}
+
+.login-button {
+    padding: 6px 12px;
+    font-size: 22px;
+    border: 0px;
+    background: darkred;
+    color: #fff;
+    width: 90%;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+}
+
+.login-button:hover {
+    opacity: 10;
+}
+
+.not-registered-yet {
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+
+.no-account {
+    display: inline-block;
+}
+
+.create-account {
+    display: inline-block;
+}
+
+@media (max-width: 500px) {
+    .input-field-login {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .input-field-login label {
+        margin-bottom: 5px;
+    }
+}
