@@ -13,9 +13,6 @@ class AdminController extends AbstractController
     #[IsGranted('ROLE_ADMIN')]
     public function index(): Response
     {
-//        return $this->render('admin/index.html.twig', [
-//            'controller_name' => 'AdminController',
-//        ]);
         $template = 'admin/index.html.twig';
         $args = [];
         return $this->render($template, $args);

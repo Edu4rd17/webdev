@@ -37,6 +37,9 @@
 <header class="header" id="header">
     <p class="logo"><i class="fas fa-mask"></i>Fuerza</p>
     <nav class="navbar">
+        {% if is_granted('ROLE_CHEF') %}
+            <a href="{{ path("chef_orders") }}">View orders</a>
+        {% endif %}
         {% block navbar %}
             <a href="{{ path("default") }}">Home</a>
             <a href="{{ path("app_product_index") }}">Menu</a>
