@@ -23,5 +23,9 @@
     <p>
         <a href="{{ path('empty_basket') }}">Remove all items</a>
     </p>
+
+    <div class="checkout">
+        <a class="checkout-button" href="{{ path('app_checkout_new') }}">Checkout</a>
+    </div>
     {#    {{ dump(app.session.get('basket')) }} #}
 {% endblock %}

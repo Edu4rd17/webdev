@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Checkout{% endblock %}
+
+{% block body %}
+    <h1>Create new Checkout</h1>
+
+    {{ include('checkout/_form.html.twig') }}
+
+    <a href="{{ path('app_checkout_index') }}">back to list</a>
+{% endblock %}
