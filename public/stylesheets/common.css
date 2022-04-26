@@ -22,6 +22,7 @@ header {
 }
 
 header .logo {
+    padding-top: 8px;
     color: #8D99AE;
     font-size: 2rem;
     font-weight: bold;

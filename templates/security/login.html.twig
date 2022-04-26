@@ -8,19 +8,19 @@
     </style>
 {% endblock %}
 
- {% block navbar %}
-     <a href="{{ path("default") }}">Homeeeeeee</a>
-     <a href="{{ path("app_product_index") }}">Menu</a>
-     {% if app.user == false %}
-         <a href="{{ path("app_login") }}">Login</a>
-         <a href="{{ path("app_register") }}">Register</a>
-     {% endif %}
-     {% if app.user %}
-         <a href="{{ path('user_show', {'id': app.user.id}) }}">{{ app.user.firstname }}</a>
-         <a href="{{ path('app_logout') }}">Logout</a>
-         <a href="{{ path('app_basket') }}">Basket</a>
-     {% endif %}
- {% endblock %}
+{# {% block navbar %}#}
+{#     <a href="{{ path("default") }}">Home</a>#}
+{#     <a href="{{ path("app_product_index") }}">Menu</a>#}
+{#     {% if app.user == false %}#}
+{#         <a href="{{ path("app_login") }}">Login</a>#}
+{#         <a href="{{ path("app_register") }}">Register</a>#}
+{#     {% endif %}#}
+{#     {% if app.user %}#}
+{#         <a href="{{ path('user_show', {'id': app.user.id}) }}">{{ app.user.firstname }}</a>#}
+{#         <a href="{{ path('app_logout') }}">Logout</a>#}
+{#         <a href="{{ path('app_basket') }}">Basket</a>#}
+{#     {% endif %}#}
+{# {% endblock %}#}
 
 {% block body %}
     <div class="login-page-container">

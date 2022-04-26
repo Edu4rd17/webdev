@@ -5,6 +5,7 @@
     <style>
         @import "/../stylesheets/common.css";
         @import "/../stylesheets/menu.css";
+        @import "/../stylesheets/homepage.css";
         /*@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');*/
     </style>
     <title>{% block title %}{% endblock %}</title>
@@ -38,7 +39,7 @@
     <p class="logo"><i class="fas fa-hamburger"></i>BistroLoco</p>
     <nav class="navbar">
         {% if is_granted('ROLE_CHEF') %}
-            <a href="{{ path("chef_orders") }}">View orders</a>
+            <a href="{{ path("app_order_index") }}">View orders</a>
         {% endif %}
         {% block navbar %}
             <a href="{{ path("default") }}">Home</a>

@@ -12,82 +12,107 @@
     {% for flash_error in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
-    <div class="register-page-container">
-        <div class="register-form-wrapper">
-            <h1 class="register-title">Create Account</h1>
-            <div class="register-form">
-                {{ form_start(registrationForm) }}
-                <form method="post">
-                    {#                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"> #}
-                    {#                    {% if error %} #}
-                    {#                        <div style="background-color: pink; padding: 1rem;"> #}
-                    {#                            {{ error.messageKey|trans(error.messageData, 'security') }} #}
-                    {#                        </div> #}
-                    {#                    {% endif %} #}
-                    <div class="input-field-register">
-{#                        <label for="inputFirstname">Firstname</label>#}
-{#                        <input type="text" id="inputFirstname" name="firstname"#}
-{#                               class="register-input" required autofocus>#}
-                        {{ form_row(registrationForm.firstname) }}
 
-                    </div>
-                    <div class="input-field-register">
-{#                        <label for="inputLastname">Lastname</label>#}
-{#                        <input type="text" id="inputLastname" name="lastname"#}
-{#                               class="register-input" required autofocus>#}
-                        {{ form_row(registrationForm.lastname) }}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
 
-                    </div>
-                    <div class="input-field-register">
-{#                        <label for="inputUsername">Username</label>#}
-{#                        <input type="text" id="inputUsername" name="username"#}
-{#                               class="register-input" required autofocus>#}
-                        {{ form_row(registrationForm.username) }}
+    <h1>Register</h1>
 
-                    </div>
-                    <div class="input-field-register">
-{#                        <label for="inputPassword">Password</label>#}
-{#                        <input type="password" name="password" id="inputPassword" class="register-input" required>#}
-                        {{ form_row(registrationForm.plainPassword, {
-                            label: 'Password'
-                        }) }}
-                    </div>
-                    <div class="input-field-register">
-{#                        <label for="inputEmail">Email</label>#}
-{#                        <input type="text" id="inputEmail" name="email"#}
-{#                               class="register-input" required autofocus>#}
-                        {{ form_row(registrationForm.email, {
-                            label: 'Email Address'
-                        }) }}
-                    </div>
-                    <div class="input-field-register">
-{#                        <label for="inputPhone">Phone</label>#}
-{#                        <input type="text" id="inputPhone" name="phone"#}
-{#                               class="register-input" required autofocus>#}
-                        {{ form_row(registrationForm.phone, {
-                            label: 'Phone Number'
-                        }) }}
-                    </div>
-                    <div class="input-field-register">
-                        {{ form_row(registrationForm.agreeTerms) }}
-                    </div>
-                    <div class="register-button-wrapper">
-                        <button type="submit" class="register-button">Create account</button>
-                    </div>
-                    <hr>
+    {{ form_start(registrationForm) }}
+    {{ form_row(registrationForm.firstname) }}
+    {{ form_row(registrationForm.lastname) }}
+    {{ form_row(registrationForm.username) }}
+    {{ form_row(registrationForm.plainPassword, {
+        label: 'Password'
+    }) }}
+    {{ form_row(registrationForm.email, {
+        label: 'Email Address'
+    }) }}
+    {{ form_row(registrationForm.phone, {
+        label: 'Phone Number'
+    }) }}
+    {{ form_row(registrationForm.agreeTerms) }}
 
-                    <div class="already-has-account">
-                        <p class="has-account">Already have an account</p>
-                        <a href="{{ path("app_login") }}" class="btn">Sign In</a>
-                    </div>
-                </form>
-                {{ form_end(registrationForm) }}
-            </div>
-        </div>
-    </div>
-
-    {#    <h1>Register</h1> #}
-
-    {#    <button type="submit" class="btn">Register</button> #}
-
+    <button type="submit" class="btn">Register</button>
+    {{ form_end(registrationForm) }}
 {% endblock %}
+{#    <div class="register-page-container"> #}
+{#        <div class="register-form-wrapper"> #}
+{#            <h1 class="register-title">Create Account</h1> #}
+{#            <div class="register-form"> #}
+{#                {{ form_start(registrationForm) }} #}
+{#                <form method="post"> #}
+{#                    #}{#                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"> #}
+{#                    #}{#                    {% if error %} #}
+{#                    #}{#                        <div style="background-color: pink; padding: 1rem;"> #}
+{#                    #}{#                            {{ error.messageKey|trans(error.messageData, 'security') }} #}
+{#                    #}{#                        </div> #}
+{#                    #}{#                    {% endif %} #}
+{#                    <div class="input-field-register"> #}
+{#                        <label for="inputFirstname">Firstname</label> #}
+{#                        <input type="text" id="inputFirstname" name="firstname" #}
+{#                               class="register-input" required autofocus> #}
+{#                        {{ form_row(registrationForm.firstname) }} #}
+
+{#                    </div> #}
+{#                    <div class="input-field-register"> #}
+{#                        <label for="inputLastname">Lastname</label> #}
+{#                        <input type="text" id="inputLastname" name="lastname" #}
+{#                               class="register-input" required autofocus> #}
+{#                        {{ form_row(registrationForm.lastname) }} #}
+
+{#                    </div> #}
+{#                    <div class="input-field-register"> #}
+{#                        <label for="inputUsername">Username</label> #}
+{#                        <input type="text" id="inputUsername" name="username" #}
+{#                               class="register-input" required autofocus> #}
+{#                        {{ form_row(registrationForm.username) }} #}
+
+{#                    </div> #}
+{#                    <div class="input-field-register"> #}
+{#                        <label for="inputPassword">Password</label> #}
+{#                        <input type="password" name="password" id="inputPassword" class="register-input" required> #}
+{#                        {{ form_row(registrationForm.plainPassword, { #}
+{#                            label: 'Password' #}
+{#                        }) }} #}
+{#                    </div> #}
+{#                    <div class="input-field-register"> #}
+{#                        <label for="inputEmail">Email</label> #}
+{#                        <input type="text" id="inputEmail" name="email" #}
+{#                               class="register-input" required autofocus> #}
+{#                        {{ form_row(registrationForm.email, { #}
+{#                            label: 'Email Address' #}
+{#                        }) }} #}
+{#                    </div> #}
+{#                    <div class="input-field-register"> #}
+{#                        <label for="inputPhone">Phone</label> #}
+{#                        <input type="text" id="inputPhone" name="phone" #}
+{#                               class="register-input" required autofocus> #}
+{#                        {{ form_row(registrationForm.phone, { #}
+{#                            label: 'Phone Number' #}
+{#                        }) }} #}
+{#                    </div> #}
+{#                    <div class="input-field-register"> #}
+{#                        {{ form_row(registrationForm.agreeTerms) }} #}
+{#                    </div> #}
+{#                    <div class="register-button-wrapper"> #}
+{#                        <button type="submit" class="register-button">Create account</button> #}
+{#                    </div> #}
+{#                    <hr> #}
+
+{#                    <div class="already-has-account"> #}
+{#                        <p class="has-account">Already have an account</p> #}
+{#                        <a href="{{ path("app_login") }}" class="btn">Sign In</a> #}
+{#                    </div> #}
+{#                </form> #}
+{#                {{ form_end(registrationForm) }} #}
+{#            </div> #}
+{#        </div> #}
+{#    </div> #}
+
+{#    #}{#    <h1>Register</h1> #}
+
+{#    #}{#    <button type="submit" class="btn">Register</button> #}
+
+{# {% endblock %} #}
