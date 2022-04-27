@@ -32,7 +32,7 @@ class AppFixtures extends Fixture
             'password' => '11111111',
             'email' => 'Eduard@gmail.com',
             'phone' => '646356456456',
-            'role' => 'ROLE_USER'
+            'role' => 'ROLE_CUSTOMER'
         ]);
 
         UserFactory::createOne([
@@ -53,6 +53,16 @@ class AppFixtures extends Fixture
             'email' => 'chef@gmail.com',
             'phone' => '0892443348',
             'role' => 'ROLE_CHEF'
+        ]);
+
+        UserFactory::createOne([
+            'firstname' => 'Waiter',
+            'lastname' => 'Waiter',
+            'username' => 'waiter',
+            'password' => '11111111',
+            'email' => 'waiter@gmail.com',
+            'phone' => '0892443348',
+            'role' => 'ROLE_WAITER'
         ]);
 
         $entree = CategoryFactory::createOne([

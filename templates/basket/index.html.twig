@@ -27,5 +27,9 @@
     <div class="checkout">
         <a class="checkout-button" href="{{ path('app_checkout_new') }}">Checkout</a>
     </div>
+
+    <div class="continue-shopping">
+        <a class="back-shopping" href="{{ path("app_product_index") }}">Continue shopping</a>
+    </div>
     {#    {{ dump(app.session.get('basket')) }} #}
 {% endblock %}

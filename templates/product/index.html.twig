@@ -2,9 +2,15 @@
 
 {% block title %}Menu{% endblock %}
 
+{% block stylesheets %}
+    <style>
+        @import "/../stylesheets/menu.css";
+    </style>
+{% endblock %}
+
 {% block body %}
-    {% if is_granted('ROLE_ADMIN') %}
-        <h1>Welcome Admin!</h1>
+    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_MANAGER') %}
+        <h1>Please add in a new product!</h1>
 
         <table class="table">
             <thead>
@@ -45,22 +51,16 @@
         </table>
 
         <a href="{{ path('app_product_new') }}">Create new</a>
+        <hr>
     {% endif %}
     <div class="page-container">
         <section id="menu">
             <article>
-                <h2>Lets see the menu!</h2>
+                <h2 class="menu-title">Lets see the menu!</h2>
             </article>
         </section>
-        {#            <nav class="food-menu-navbar"> #}
-        {#                <a href="#menu">See Menu</a> #}
-        {#                {% for product in products %} #}
-        {#                    <a href="#{{ product.category }}">{{ product.category }}</a> #}
-        {#                {% endfor %} #}
-        {#            </nav> #}
         <div class="menu-container">
             {% for product in products %}
-                <section id="{{ product.category }}">
                     <div class="menu">
                         <div class="menu-group-holder">
                             <h1 class="menu-group-heading">{{ product.category }}</h1>
@@ -78,8 +78,9 @@
                                             {{ product.productDescription }}
                                         </p>
                                         {% if app.user %}
-                                            <p>
-                                                <a href="{{ path('add_basket', {'id': product.id}) }}">Add to
+                                            <p class="basket">
+                                                <a class="add-basket"
+                                                   href="{{ path('add_basket', {'id': product.id}) }}">Add to
                                                     basket</a>
                                             </p>
                                         {% endif %}
@@ -88,59 +89,7 @@
                             {% endfor %}
                         </div>
                     </div>
-                </section>
             {% endfor %}
-            {#                <section id="main"> #}
-            {#                    <div class="menu"> #}
-            {#                        <div class="menu-group-holder"> #}
-            {#                            <h1 class="menu-group-heading">Main</h1> #}
-            {#                        </div> #}
-            {#                        <div class="menu-group"> #}
-            {#                            {% for product in products %} #}
-            {#                                <div class="menu-item"> #}
-            {#                                    <img src="../images/pizza.jpg" alt="Pizza" class="menu-item-image"> #}
-            {#                                    <div class="menu-item-text"> #}
-            {#                                        <h3 class="menu-item-heading"> #}
-            {#                                            <span class="menu-item-name">{{ product.productName }}</span> #}
-            {#                                            <span class="menu-item-price">€{{ product.productPrice }}</span> #}
-            {#                                        </h3> #}
-            {#                                        <p class="menu-item-description"> #}
-            {#                                            {{ product.productDescription }} #}
-            {#                                        </p> #}
-            {#                                    </div> #}
-            {#                                </div> #}
-            {#                            {% endfor %} #}
-            {#                        </div> #}
-            {#                    </div> #}
-            {#                </section> #}
-
-            {#                <section id="deserts"> #}
-            {#                    <div class="menu"> #}
-            {#                        <div class="menu-group-holder"> #}
-            {#                            <h1 class="menu-group-heading">Deserts</h1> #}
-            {#                        </div> #}
-            {#                        <div class="menu-group"> #}
-            {#                            {% for product in products %} #}
-            {#                                <div class="menu-item"> #}
-            {#                                    <img src="../images/pizza.jpg" alt="Pizza" class="menu-item-image"> #}
-            {#                                    <div class="menu-item-text"> #}
-            {#                                        <h3 class="menu-item-heading"> #}
-            {#                                            <span class="menu-item-name">{{ product.productName }}</span> #}
-            {#                                            <span class="menu-item-price">€{{ product.productPrice }}</span> #}
-            {#                                        </h3> #}
-            {#                                        <p class="menu-item-description"> #}
-            {#                                            {{ product.productDescription }} #}
-            {#                                        </p> #}
-            {#                                    </div> #}
-            {#                                </div> #}
-            {#                            {% endfor %} #}
-            {#                        </div> #}
-            {#                    </div> #}
-            {#                </section> #}
         </div>
     </div>
-    {#            #}{#        {% else %} #}
-    {#            #}{#            <tr> #}
-    {#            #}{#                <td colspan="6">no records fnd</td> #}
-    {#            #}{#            </tr> #}
 {% endblock %}

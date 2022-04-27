@@ -1,67 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-.view-menu {
-    height: 200px;
-    background-color: red;
+.page-container {
+    font-family: 'Arvo', serif;
+
 }
 
-.food-menu-navbar {
-    background-color: #3a24f0;
-    padding: 10px;
+#menu {
     text-align: center;
-    width: 100%;
-    position: sticky;
-    top: 0px;
+    box-shadow: 20px 20px 20px rgba(33, 33, 33, .2);
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-family: 'Arvo', serif;
 }
 
-.food-menu-navbar a {
-    color: white;
-    text-decoration: none;
-    margin: 0px 20px;
-    font-size: 1.3em;
-}
-
-.food-menu-navbar a:hover {
-    text-decoration: underline;
+.menu-title {
+    color: #ff8533;
+    font-size: 50px;
 }
 
 .menu-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 1.5em;
+    font-family: 'Arvo', serif;
 }
 
 .menu {
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 14px;
+    /*font-size: 14px;*/
+    margin-top: 30px;
 }
 
 .menu-group-holder {
-    background-color: black;
-    font-family: 'Shadows Into Light', cursive;
     text-align: center;
+    background-color: black;
     width: 100%;
+    border-radius: 10px;
 }
 
 .menu-group-heading {
     margin: 0;
-    padding-bottom: 1em;
-    /*border-bottom: 2px solid #ccc;*/
+    padding-bottom: 10px;
     color: white;
+    padding-top: 10px;
 }
 
 .menu-group {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5em;
-    padding: 1.5em 0;
-    border-left: 20px solid black;
-    border-right: 20px solid black;
-    border-bottom: 20px solid black;
+    padding: 1.5em 20px;
 }
 
 .menu-item {
@@ -70,8 +63,7 @@
 }
 
 .menu-item-image {
-    width: 80px;
-    height: 80px;
+    width: 100px;
     flex-shrink: 0;
     object-fit: cover;
     margin-right: 1.5em;
@@ -89,23 +81,41 @@
 
 .menu-item-name {
     margin-right: 1.5em;
+    font-weight: bold;
 }
 
 .menu-item-price {
     margin: 5px 5px;
     padding-right: 10px;
     padding-left: 10px;
+    font-size: 24px;
     border-radius: 5px;
-    background-color: lightgray;
+    background-color: #8D99AE;
     text-align: center;
 }
 
 .menu-item-description {
-    line-height: 1.2em;
+    line-height: .6em;
+    color: #2B2D42;
 }
 
 .menu-item:hover {
     box-shadow: 20px 20px 20px rgba(33, 33, 33, .2);
+}
+
+.add-basket {
+    background-color: #2B2D42;
+    color: #EDF2F4;
+    text-transform: uppercase;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.add-basket:hover{
+    color: #D90429;
+    transition: all .3s linear;
 }
 
 @media screen and (min-width: 1000px) {
