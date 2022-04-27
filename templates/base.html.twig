@@ -51,7 +51,7 @@
             {% if app.user %}
                 <a href="{{ path('user_show', {'id': app.user.id}) }}">{{ app.user.firstname }}</a>
                 <a href="{{ path('app_logout') }}">Logout</a>
-                <a href="{{ path('app_basket') }}">Basket</a>
+                <a href="{{ path('app_basket') }}"><i class="fa fa-shopping-basket" style="font-size: 22px"></i></a>
             {% endif %}
         {% endblock %}
     </nav>

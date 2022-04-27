@@ -1,35 +1,69 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello BasketController!{% endblock %}
+{% block title %}Basket{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        @import "/../stylesheets/basket.css";
+    </style>
+{% endblock %}
 
 {% block body %}
-    <h1>Basket</h1>
+    <div class="top-basket">
+        <h1 class="basket-title">Basket</h1>
+    </div>
     {% set basket =  app.session.get('basket') %}
 
     {% if basket is null %}
         <p>You have no products in your basket</p>
-
     {% else %}
-        <ul>
-            {% for product in basket %}
-                <li>
-                    <hr>
-                    {{ product.productName }} :: {{ product.productDescription }}
-                    <a href="{{ path('basket_delete', {'id': product.id}) }}">(remove)</a>
-                </li>
-            {% endfor %}
-        </ul>
+        <div class="small-container cart-page">
+            <table>
+                <tr>
+                    <th class="title-th">Product</th>
+                    <th class="title-th">Quantity</th>
+                    <th class="title-th">Subtotal</th>
+                    <th class="title-th empty-link">
+                        <a class="empty-basket" href="{{ path('empty_basket') }}">Empty Basket</a>
+                    </th>
+                </tr>
+                {% for product in basket %}
+                    <tr class="products-tr">
+                        <td class="list-tr">
+                            <div class="cart-info">
+                                <img src="../images/pizza.jpg" alt="Pizza">
+                                <div>
+                                    <p> {{ product.productName }}</p>
+                                    {#                                    <p>{{ product.productDescription }}</p> #}
+                                    <small>Price €{{ product.productPrice }}</small>
+                                    <br/>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="list-tr"><input type="number" value="1"/></td>
+                        <td class="list-tr">€{{ product.productPrice }}</td>
+                        <td class="list-tr">
+                            <a class="remove-link" href="{{ path('basket_delete', {'id': product.id}) }}">Remove</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <div class="bottom-container">
+                <div class="continue-shopping">
+                    <a class="back-shopping" href="{{ path("app_product_index") }}">Continue shopping</a>
+                </div>
+                <div class="total-price">
+                    <div class="price">
+                        <p class="price-label">Total Price:</p>
+                        <p class="price-sum">€25</p>
+                        <div class="checkout">
+                            <a class="checkout-button" href="{{ path('app_checkout_new') }}">Checkout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     {% endif %}
-    <p>
-        <a href="{{ path('empty_basket') }}">Remove all items</a>
-    </p>
-
-    <div class="checkout">
-        <a class="checkout-button" href="{{ path('app_checkout_new') }}">Checkout</a>
-    </div>
-
-    <div class="continue-shopping">
-        <a class="back-shopping" href="{{ path("app_product_index") }}">Continue shopping</a>
-    </div>
-    {#    {{ dump(app.session.get('basket')) }} #}
 {% endblock %}
+
+

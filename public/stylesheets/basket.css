@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.top-basket {
+    text-align: center;
+    font-family: 'Arvo', serif;
+    margin-top: 30px;
+}
+
+.empty-basket {
+    text-decoration: none;
+    background-color: #2B2D42;
+    padding: 4px 6px;
+    border-radius: 10px;
+    color: red;
+}
+
+.empty-basket:hover {
+    color: white;
+    background-color: red;
+}
+
+.small-container {
+    font-family: 'Arvo', serif;
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.cart-page {
+    margin: 40px auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.remove-link {
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.cart-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.title-th {
+    text-align: center;
+    padding: 8px;
+    color: #ffffff;
+    background: #ff8533;
+    font-weight: normal;
+}
+
+td {
+    padding: 10px 5px;
+    text-align: center;
+}
+
+td input {
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+
+td a {
+    color: #ff523b;
+    font-size: 12px;
+}
+
+td img {
+    width: 85px;
+    height: 85px;
+    margin-right: 10px;
+}
+
+.bottom-container {
+    border-top: 3px solid #ff8533;
+    text-align: center;
+    width: 100%;
+}
+
+.total-price {
+    text-align: center;
+    display: inline-block;
+    margin-left: 50px;
+    padding-top: 10px;
+
+}
+
+.price {
+    display: flex;
+    font-weight: bold;
+}
+
+.continue-shopping {
+    text-align: center;
+    display: inline-block;
+    margin-right: 50px;
+    padding-top: 10px;
+}
+
+.back-shopping {
+    text-decoration: none;
+    background-color: #2B2D42;
+    padding: 8px 12px;
+    color: white;
+    border-radius: 10px;
+}
+
+.price-label{
+    padding-right: 5px;
+}
+
+.checkout{
+    margin-left: 10px;
+}
+
+.checkout-button {
+    text-decoration: none;
+    background-color: lightseagreen;
+    padding: 8px 12px;
+    color: white;
+    border-radius: 10px;
+}
+
+td:last-child {
+    text-align: right;
+}
+
+th:last-child {
+    text-align: right;
+}
+
+.products-tr {
+    border-bottom: 1px solid #ff8533;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .bottom-container {
+        text-align: center;
+    }
+
+    .total-price{
+        padding-top: 10px;
+    }
+}
