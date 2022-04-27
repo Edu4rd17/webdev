@@ -1,5 +1,2 @@
 # WebFrameworkDevProject_Eduard
-
-- fgh
-- fg
-- asfdasdfasdfa
+Project for Web dev Module!!
