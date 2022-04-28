@@ -1,0 +1,20 @@
+Home Page (App\Tests\HomePage)
+ [ ] Something
+
+Product Crud (App\Tests\ProductCrud)
+ [x] Menu page title text
+ [x] Public user can not see new product link
+ [x] Role admin user can see new product link
+ [x] User can not see add to basket link unless logged in
+ [x] Access denied for role user when try access new product
+
+Product Database (App\Tests\ProductDatabase)
+ [x] Number of product match fixtures
+
+Sample (WebProjectTests\Sample)
+ [x] It works
+
+User Crud (App\Tests\UserCrud)
+ [x] Role admin user can see user list
+ [x] Role user user can not see user list
+

@@ -2,18 +2,22 @@
 
 namespace App\Tests;
 
+use App\Entity\Category;
+use App\Repository\CategoryRepository;
+use App\Repository\ProductRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\Response;
 
 class ProductCrudTest extends WebTestCase
 {
-    public function testHomePageTitleText(): void
+    public function testMenuPageTitleText(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/');
+        $crawler = $client->request('GET', '/product/');
 
         $this->assertResponseIsSuccessful();
-        $this->assertSelectorTextContains('h1', 'Welcome to BistroLoco!');
+        $this->assertSelectorTextContains('h2', 'Lets see the menu!');
     }
 
     public function testPublicUserCanNotSeeNewProductLink(): void
@@ -35,10 +39,25 @@ class ProductCrudTest extends WebTestCase
         $testUser = $userRepository->findOneByEmail($userEmail);
         $client->loginUser($testUser);
 
-        $crawler = $client->request('GET', '/product');
-
+        $crawler = $client->request('GET', '/product/');
 
         $contentSelector = '#new_product_link';
+        $this->assertSelectorExists($contentSelector);
+    }
+
+    public function testUserCanNotSeeAddToBasketLinkUnlessLoggedIn(): void
+    {
+        $client = static::createClient();
+
+        //log in as normal user
+        $userEmail = 'Eduard@gmail.com';
+        $userRepository = static::getContainer()->get(UserRepository::class);
+        $testUser = $userRepository->findOneByEmail($userEmail);
+        $client->loginUser($testUser);
+
+        $crawler = $client->request('GET', '/product/');
+
+        $contentSelector = '#add_to_basket_link';
         $this->assertSelectorExists($contentSelector);
     }
 
@@ -70,26 +89,26 @@ class ProductCrudTest extends WebTestCase
 //        $client->followRedirects();
 //
 //        // Arrange - get repository references
-//        $productRepository = static::getContainer()->get(ModuleRepository::class);
+//        $productRepository = static::getContainer()->get(ProductRepository::class);
 //        $userRepository = static::getContainer()->get(UserRepository::class);
-//        $lecturerRepository = static::getContainer()->get(LecturerRepository::class);
+//        $categoryRepository = static::getContainer()->get(CategoryRepository::class);
 //
 //        // Arrange - get admin user - from fixtures
-//        $userEmail = 'admin@admin.com';
+//        $userEmail = 'admin@gmail.com';
 //        $adminUser = $userRepository->findOneByEmail($userEmail);
 //
-//        // Arrange - get Matt lecturer - from fixtures
-//        $lecturerName = 'Matt Smith';
-//        $lecturer = $lecturerRepository->findOneByName($lecturerName);
+//        // Arrange - get Main category - from fixtures
+//        $categoryType = 'Main';
+//        $category = $categoryRepository->findOneByCategoryType($categoryType);
 //
 //        // Arrange - request parameters
 //        $httpMethod = 'GET';
-//        $url = '/module/new';
+//        $url = '/product/new';
 //
 //        // Arrange - count number modules BEFORE adding
-//        $modules = $moduleRepository->findAll();
-//        $numberOfModulesBeforeOneCreated = count($modules);
-//        $expectedNumberOfModulesAfterOneCreated = $numberOfModulesBeforeOneCreated + 1;
+//        $products = $productRepository->findAll();
+//        $numberOfProductsBeforeOneCreated = count($products);
+//        $expectedNumberOfProductsAfterOneCreated = $numberOfProductsBeforeOneCreated + 1;
 //
 //        // Act - login as ADMIN user
 //        $client->loginUser($adminUser);
@@ -97,16 +116,18 @@ class ProductCrudTest extends WebTestCase
 //        // Act - fill in form to create new module
 //        $submitButtonName = 'Save';
 //        $client->submit($client->request($httpMethod, $url)->selectButton($submitButtonName)->form([
-//            'module[title]'  => 'Test Module',
-//            'module[credits]'  => '10',
-//            'module[lecturer]'  => $lecturer->getId(), // need to submit ID of lecturer, not name, since a related object
+//            'product[productName]' => 'Food Test',
+//            'product[productPrice]' => '11.99',
+//            'product[isAvailable]' => true,
+//            'product[productDescription]' => 'Amazing food Test',
+//            'product[category]' => $category->getId(), // need to submit ID of category, not name, since a related object
 //        ]));
 //
-//        // Act - get array of modules AFTER adding
-//        $modules = $moduleRepository->findAll();
+//        // Act - get array of product AFTER adding
+//        $products = $productRepository->findAll();
 //
 //        // Assert
-//        $this->assertCount($expectedNumberOfModulesAfterOneCreated, $modules);
+//        $this->assertCount($expectedNumberOfProductsAfterOneCreated, $products);
 //    }
 
 }

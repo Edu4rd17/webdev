@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="10" assertions="17" errors="0" warnings="0" failures="1" skipped="0" time="3.473381">
+    <testsuite name="Project Test Suite" tests="10" assertions="17" errors="0" warnings="0" failures="1" skipped="0" time="3.473381">
+      <testsuite name="App\Tests\HomePageTest" file="D:\githubProjects\WebFrameworkDevProject_Eduard\tests\HomePageTest.php" tests="1" assertions="3" errors="0" warnings="0" failures="1" skipped="0" time="2.970646">
+        <testcase name="testSomething" class="App\Tests\HomePageTest" classname="App.Tests.HomePageTest" file="D:\githubProjects\WebFrameworkDevProject_Eduard\tests\HomePageTest.php" line="9" assertions="3" time="2.970646">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">App\Tests\HomePageTest::testSomething
+Failed asserting that Symfony\Component\DomCrawler\Crawler Object &amp;0000000000000f260000000000000000 (
+    'uri' =&gt; 'http://localhost/'
+    'defaultNamespacePrefix' =&gt; 'default'
+    'namespaces' =&gt; Array &amp;0 ()
+    'cachedNamespaces' =&gt; ArrayObject Object &amp;0000000000000e800000000000000000 ()
+    'baseHref' =&gt; 'http://localhost/'
+    'document' =&gt; DOMDocument Object &amp;0000000000000e7b0000000000000000 (
+        'config' =&gt; null
+    )
+    'nodes' =&gt; Array &amp;1 (
+        0 =&gt; DOMElement Object &amp;0000000000000e7c0000000000000000 (
+            'schemaTypeInfo' =&gt; null
+        )
+    )
+    'isHtml' =&gt; true
+    'html5Parser' =&gt; null
+) matches selector "h1" and the text "Welcome to BistroLoco!" of the node matching selector "h1" contains "Hello World".
+
+D:\githubProjects\WebFrameworkDevProject_Eduard\vendor\symfony\framework-bundle\Test\DomCrawlerAssertionsTrait.php:40
+D:\githubProjects\WebFrameworkDevProject_Eduard\tests\HomePageTest.php:15</failure>
+        </testcase>
+      </testsuite>
+      <testsuite name="App\Tests\ProductCrudTest" file="D:\githubProjects\WebFrameworkDevProject_Eduard\tests\unit\ProductCrudTest.php" tests="5" assertions="7" errors="0" warnings="0" failures="0" skipped="0" time="0.330883">
+        <testcase name="testMenuPageTitleText" class="App\Tests\ProductCrudTest" classname="App.Tests.ProductCrudTest" file="D:\githubProjects\WebFrameworkDevProject_Eduard\tests\unit\ProductCrudTest.php" line="14" assertions="3" time="0.156663"/>
+        <testcase name="testPublicUserCanNotSeeNewProductLink" class="App\Tests\ProductCrudTest" classname="App.Tests.ProductCrudTest" file="D:\githubProjects\WebFrameworkDevProject_Eduard\tests\unit\ProductCrudTest.php" line="23" assertions="1" time="0.032433"/>
+        <testcase name="testRoleAdminUserCanSeeNewProductLink" class="App\Tests\ProductCrudTest" classname="App.Tests.ProductCrudTest" file="D:\githubProjects\WebFrameworkDevProject_Eduard\tests\unit\ProductCrudTest.php" line="32" assertions="1" time="0.044549"/>
+        <testcase name="testUserCanNotSeeAddToBasketLinkUnlessLoggedIn" class="App\Tests\ProductCrudTest" classname="App.Tests.ProductCrudTest" file="D:\githubProjects\WebFrameworkDevProject_Eduard\tests\unit\ProductCrudTest.php" line="48" assertions="1" time="0.050852"/>
+        <testcase name="testAccessDeniedForRoleUserWhenTryAccessNewProduct" class="App\Tests\ProductCrudTest" classname="App.Tests.ProductCrudTest" file="D:\githubProjects\WebFrameworkDevProject_Eduard\tests\unit\ProductCrudTest.php" line="64" assertions="1" time="0.046385"/>
+      </testsuite>
+      <testsuite name="App\Tests\ProductDatabaseTest" file="D:\githubProjects\WebFrameworkDevProject_Eduard\tests\unit\ProductDatabaseTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.028429">
+        <testcase name="testNumberOfProductMatchFixtures" class="App\Tests\ProductDatabaseTest" classname="App.Tests.ProductDatabaseTest" file="D:\githubProjects\WebFrameworkDevProject_Eduard\tests\unit\ProductDatabaseTest.php" line="10" assertions="1" time="0.028429"/>
+      </testsuite>
+      <testsuite name="WebProjectTests\SampleTest" file="D:\githubProjects\WebFrameworkDevProject_Eduard\tests\unit\SampleTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.000934">
+        <testcase name="testItWorks" class="WebProjectTests\SampleTest" classname="WebProjectTests.SampleTest" file="D:\githubProjects\WebFrameworkDevProject_Eduard\tests\unit\SampleTest.php" line="9" assertions="1" time="0.000934"/>
+      </testsuite>
+      <testsuite name="App\Tests\UserCrudTest" file="D:\githubProjects\WebFrameworkDevProject_Eduard\tests\unit\UserCrudTest.php" tests="2" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.142489">
+        <testcase name="testRoleAdminUserCanSeeUserList" class="App\Tests\UserCrudTest" classname="App.Tests.UserCrudTest" file="D:\githubProjects\WebFrameworkDevProject_Eduard\tests\unit\UserCrudTest.php" line="11" assertions="4" time="0.059153"/>
+        <testcase name="testRoleUserUserCanNotSeeUserList" class="App\Tests\UserCrudTest" classname="App.Tests.UserCrudTest" file="D:\githubProjects\WebFrameworkDevProject_Eduard\tests\unit\UserCrudTest.php" line="41" assertions="1" time="0.083336"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

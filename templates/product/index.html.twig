@@ -79,7 +79,8 @@
                                     {% if app.user %}
                                         <p class="basket">
                                             <a class="add-basket"
-                                               href="{{ path('add_basket', {'id': product.id}) }}">Add to
+                                               href="{{ path('add_basket', {'id': product.id}) }}"
+                                               id="add_to_basket_link">Add to
                                                 basket</a>
                                         </p>
                                     {% endif %}

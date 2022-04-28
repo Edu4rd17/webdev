@@ -24,7 +24,13 @@ class BasketController extends AbstractController
     {
         $template = 'basket/index.html.twig';
         $args = [];
+        $session = $this->requestStack->getSession();
+        if ($session->has('basket')) {
+            $products = $session->get('basket');
+        }
+//        var_dump($products);
         return $this->render($template, $args);
+
     }
 
     //empty the basket
