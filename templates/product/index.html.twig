@@ -49,8 +49,7 @@
             {% endfor %}
             </tbody>
         </table>
-
-        <a href="{{ path('app_product_new') }}">Create new</a>
+        <a href="{{ path('app_product_new') }}" id="new_product_link">Create new</a>
         <hr>
     {% endif %}
     <div class="page-container">
@@ -61,34 +60,34 @@
         </section>
         <div class="menu-container">
             {% for product in products %}
-                    <div class="menu">
-                        <div class="menu-group-holder">
-                            <h1 class="menu-group-heading">{{ product.category }}</h1>
-                        </div>
-                        <div class="menu-group">
-                            {% for product in products %}
-                                <div class="menu-item">
-                                    <img src="../images/pizza.jpg" alt="Pizza" class="menu-item-image">
-                                    <div class="menu-item-text">
-                                        <h3 class="menu-item-heading">
-                                            <span class="menu-item-name">{{ product.productName }}</span>
-                                            <span class="menu-item-price">€{{ product.productPrice }}</span>
-                                        </h3>
-                                        <p class="menu-item-description">
-                                            {{ product.productDescription }}
-                                        </p>
-                                        {% if app.user %}
-                                            <p class="basket">
-                                                <a class="add-basket"
-                                                   href="{{ path('add_basket', {'id': product.id}) }}">Add to
-                                                    basket</a>
-                                            </p>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        </div>
+                <div class="menu">
+                    <div class="menu-group-holder">
+                        <h1 class="menu-group-heading">{{ product.category }}</h1>
                     </div>
+                    <div class="menu-group">
+                        {% for product in products %}
+                            <div class="menu-item">
+                                <img src="../images/pizza.jpg" alt="Pizza" class="menu-item-image">
+                                <div class="menu-item-text">
+                                    <h3 class="menu-item-heading">
+                                        <span class="menu-item-name">{{ product.productName }}</span>
+                                        <span class="menu-item-price">€{{ product.productPrice }}</span>
+                                    </h3>
+                                    <p class="menu-item-description">
+                                        {{ product.productDescription }}
+                                    </p>
+                                    {% if app.user %}
+                                        <p class="basket">
+                                            <a class="add-basket"
+                                               href="{{ path('add_basket', {'id': product.id}) }}">Add to
+                                                basket</a>
+                                        </p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             {% endfor %}
         </div>
     </div>
