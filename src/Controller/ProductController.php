@@ -23,7 +23,7 @@ class ProductController extends AbstractController
     }
 
     #[Route('/new', name: 'app_product_new', methods: ['GET', 'POST'])]
-    #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_CHEF')]
     public function new(Request $request, ProductRepository $productRepository): Response
     {
         $product = new Product();

@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block body %}
-    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_MANAGER') %}
+    {% if is_granted('ROLE_CHEF') %}
         <h1>Please add in a new product!</h1>
 
         <table class="table">

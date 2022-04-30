@@ -17,30 +17,43 @@
         </div>
         <div class="box2">
             <p>
-                Savor a flavor at BistroLoco, a brand-new friendly restaurant in Dublin city. Whether you’re in the mood
+                Savor a flavor at BistroLoco, a brand-new friendly restaurant in Dublin city. Whether you’re in the
+                mood
                 for something
-                spicy or sweet, we’ve got a huge range of authentic fresh cuisine available on our menu—all deep fried
+                spicy or sweet, we’ve got a huge range of authentic fresh cuisine available on our menu—all deep
+                fried
                 to
                 perfection. We’re excited to bring something new to our community and can’t wait to share our unique
                 recipes.
             </p>
         </div>
-        <div class="box3">
-            <p>
-                Now come on, quickly login to your account, order your favourite food and we will serve it right to your
-                table!
-            </p>
-        </div>
-        <div class="box-holder">
-            <div class="login-box">
-                <p>Already have an account? Then quickly</p>
-                <a class="login-link" href="{{ path("app_login") }}">Login</a>
+        {% if app.user %}
+            <div class="user-logged">
+                <section>
+                    <p>
+                        We are so glad you are back. We missed you!
+                    </p>
+                </section>
             </div>
-            <div class="register-box">
-                <p>Don't have an account yet? Then simply</p>
-                <a class="register-link" href="{{ path("app_register") }}">Register</a>
+        {% elseif not app.user %}
+            <div class="box3">
+                <p>
+                    Now come on, quickly login to your account, order your favourite food and we will serve it right to
+                    your
+                    table!
+                </p>
             </div>
-        </div>
+            <div class="box-holder">
+                <div class="login-box">
+                    <p>Already have an account? Then quickly</p>
+                    <a class="login-link" href="{{ path("app_login") }}" id="login_link">Login</a>
+                </div>
+                <div class="register-box">
+                    <p>Don't have an account yet? Then simply</p>
+                    <a class="register-link" href="{{ path("app_register") }}" id="register_link">Register</a>
+                </div>
+            </div>
+        {% endif %}
     </div>
 
 {% endblock %}

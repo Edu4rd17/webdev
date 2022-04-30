@@ -29,12 +29,12 @@ class ProductCrudTest extends WebTestCase
         $this->assertSelectorNotExists($contentSelector);
     }
 
-    public function testRoleAdminUserCanSeeNewProductLink(): void
+    public function testRoleChefUserCanSeeNewProductLink(): void
     {
         $client = static::createClient();
 
         //log in as admin
-        $userEmail = 'admin@gmail.com';
+        $userEmail = 'chef@gmail.com';
         $userRepository = static::getContainer()->get(UserRepository::class);
         $testUser = $userRepository->findOneByEmail($userEmail);
         $client->loginUser($testUser);
@@ -82,7 +82,7 @@ class ProductCrudTest extends WebTestCase
     }
 
 
-//    public function testRoleAdminCanAddProduct(): void
+//    public function testRoleChefCanAddProduct(): void
 //    {
 //        // Arrange - create client
 //        $client = static::createClient();
@@ -94,8 +94,8 @@ class ProductCrudTest extends WebTestCase
 //        $categoryRepository = static::getContainer()->get(CategoryRepository::class);
 //
 //        // Arrange - get admin user - from fixtures
-//        $userEmail = 'admin@gmail.com';
-//        $adminUser = $userRepository->findOneByEmail($userEmail);
+//        $userEmail = 'chef@gmail.com';
+//        $chefUser = $userRepository->findOneByEmail($userEmail);
 //
 //        // Arrange - get Main category - from fixtures
 //        $categoryType = 'Main';
@@ -111,7 +111,7 @@ class ProductCrudTest extends WebTestCase
 //        $expectedNumberOfProductsAfterOneCreated = $numberOfProductsBeforeOneCreated + 1;
 //
 //        // Act - login as ADMIN user
-//        $client->loginUser($adminUser);
+//        $client->chefUser($adminUser);
 //
 //        // Act - fill in form to create new module
 //        $submitButtonName = 'Save';
