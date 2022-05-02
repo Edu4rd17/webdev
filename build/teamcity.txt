@@ -1,0 +1,78 @@
+
+##teamcity[testCount count='13' flowId='4516']
+
+##teamcity[testSuiteStarted name='Project Test Suite' flowId='4516']
+
+##teamcity[testSuiteStarted name='App\Tests\unit\HomepageTest' locationHint='php_qn://D:\githubProjects\WebFrameworkDevProject_Eduard\tests\acceptance\HomepageTest.php::\App\Tests\unit\HomepageTest' flowId='4516']
+
+##teamcity[testStarted name='testHomePageTitleText' locationHint='php_qn://D:\githubProjects\WebFrameworkDevProject_Eduard\tests\acceptance\HomepageTest.php::\App\Tests\unit\HomepageTest::testHomePageTitleText' flowId='4516']
+
+##teamcity[testFinished name='testHomePageTitleText' duration='208' flowId='4516']
+
+##teamcity[testStarted name='testPublicUserCanSeeWelcomeBackMessageWhenLoggedIn' locationHint='php_qn://D:\githubProjects\WebFrameworkDevProject_Eduard\tests\acceptance\HomepageTest.php::\App\Tests\unit\HomepageTest::testPublicUserCanSeeWelcomeBackMessageWhenLoggedIn' flowId='4516']
+
+##teamcity[testFinished name='testPublicUserCanSeeWelcomeBackMessageWhenLoggedIn' duration='49' flowId='4516']
+
+##teamcity[testStarted name='testUserCanNotSeeLoginRegisterLinksWhenLoggedIn' locationHint='php_qn://D:\githubProjects\WebFrameworkDevProject_Eduard\tests\acceptance\HomepageTest.php::\App\Tests\unit\HomepageTest::testUserCanNotSeeLoginRegisterLinksWhenLoggedIn' flowId='4516']
+
+##teamcity[testFinished name='testUserCanNotSeeLoginRegisterLinksWhenLoggedIn' duration='37' flowId='4516']
+
+##teamcity[testStarted name='testUserCanSeeLoginRegisterLinksWhenNotLoggedIn' locationHint='php_qn://D:\githubProjects\WebFrameworkDevProject_Eduard\tests\acceptance\HomepageTest.php::\App\Tests\unit\HomepageTest::testUserCanSeeLoginRegisterLinksWhenNotLoggedIn' flowId='4516']
+
+##teamcity[testFinished name='testUserCanSeeLoginRegisterLinksWhenNotLoggedIn' duration='22' flowId='4516']
+
+##teamcity[testSuiteFinished name='App\Tests\unit\HomepageTest' flowId='4516']
+
+##teamcity[testSuiteStarted name='App\Tests\ProductCrudTest' locationHint='php_qn://D:\githubProjects\WebFrameworkDevProject_Eduard\tests\acceptance\ProductCrudTest.php::\App\Tests\ProductCrudTest' flowId='4516']
+
+##teamcity[testStarted name='testMenuPageTitleText' locationHint='php_qn://D:\githubProjects\WebFrameworkDevProject_Eduard\tests\acceptance\ProductCrudTest.php::\App\Tests\ProductCrudTest::testMenuPageTitleText' flowId='4516']
+
+##teamcity[testFinished name='testMenuPageTitleText' duration='36' flowId='4516']
+
+##teamcity[testStarted name='testPublicUserCanNotSeeNewProductLink' locationHint='php_qn://D:\githubProjects\WebFrameworkDevProject_Eduard\tests\acceptance\ProductCrudTest.php::\App\Tests\ProductCrudTest::testPublicUserCanNotSeeNewProductLink' flowId='4516']
+
+##teamcity[testFinished name='testPublicUserCanNotSeeNewProductLink' duration='20' flowId='4516']
+
+##teamcity[testStarted name='testRoleChefUserCanSeeNewProductLink' locationHint='php_qn://D:\githubProjects\WebFrameworkDevProject_Eduard\tests\acceptance\ProductCrudTest.php::\App\Tests\ProductCrudTest::testRoleChefUserCanSeeNewProductLink' flowId='4516']
+
+##teamcity[testFinished name='testRoleChefUserCanSeeNewProductLink' duration='26' flowId='4516']
+
+##teamcity[testStarted name='testUserCanNotSeeAddToBasketLinkUnlessLoggedIn' locationHint='php_qn://D:\githubProjects\WebFrameworkDevProject_Eduard\tests\acceptance\ProductCrudTest.php::\App\Tests\ProductCrudTest::testUserCanNotSeeAddToBasketLinkUnlessLoggedIn' flowId='4516']
+
+##teamcity[testFinished name='testUserCanNotSeeAddToBasketLinkUnlessLoggedIn' duration='44' flowId='4516']
+
+##teamcity[testStarted name='testAccessDeniedForRoleUserWhenTryAccessNewProduct' locationHint='php_qn://D:\githubProjects\WebFrameworkDevProject_Eduard\tests\acceptance\ProductCrudTest.php::\App\Tests\ProductCrudTest::testAccessDeniedForRoleUserWhenTryAccessNewProduct' flowId='4516']
+
+##teamcity[testFinished name='testAccessDeniedForRoleUserWhenTryAccessNewProduct' duration='44' flowId='4516']
+
+##teamcity[testSuiteFinished name='App\Tests\ProductCrudTest' flowId='4516']
+
+##teamcity[testSuiteStarted name='App\Tests\ProductDatabaseTest' locationHint='php_qn://D:\githubProjects\WebFrameworkDevProject_Eduard\tests\acceptance\ProductDatabaseTest.php::\App\Tests\ProductDatabaseTest' flowId='4516']
+
+##teamcity[testStarted name='testNumberOfProductMatchFixtures' locationHint='php_qn://D:\githubProjects\WebFrameworkDevProject_Eduard\tests\acceptance\ProductDatabaseTest.php::\App\Tests\ProductDatabaseTest::testNumberOfProductMatchFixtures' flowId='4516']
+
+##teamcity[testFinished name='testNumberOfProductMatchFixtures' duration='18' flowId='4516']
+
+##teamcity[testSuiteFinished name='App\Tests\ProductDatabaseTest' flowId='4516']
+
+##teamcity[testSuiteStarted name='WebProjectTests\SampleTest' locationHint='php_qn://D:\githubProjects\WebFrameworkDevProject_Eduard\tests\acceptance\SampleTest.php::\WebProjectTests\SampleTest' flowId='4516']
+
+##teamcity[testStarted name='testItWorks' locationHint='php_qn://D:\githubProjects\WebFrameworkDevProject_Eduard\tests\acceptance\SampleTest.php::\WebProjectTests\SampleTest::testItWorks' flowId='4516']
+
+##teamcity[testFinished name='testItWorks' duration='0' flowId='4516']
+
+##teamcity[testSuiteFinished name='WebProjectTests\SampleTest' flowId='4516']
+
+##teamcity[testSuiteStarted name='App\Tests\UserCrudTest' locationHint='php_qn://D:\githubProjects\WebFrameworkDevProject_Eduard\tests\acceptance\UserCrudTest.php::\App\Tests\UserCrudTest' flowId='4516']
+
+##teamcity[testStarted name='testRoleAdminUserCanSeeUserList' locationHint='php_qn://D:\githubProjects\WebFrameworkDevProject_Eduard\tests\acceptance\UserCrudTest.php::\App\Tests\UserCrudTest::testRoleAdminUserCanSeeUserList' flowId='4516']
+
+##teamcity[testFinished name='testRoleAdminUserCanSeeUserList' duration='58' flowId='4516']
+
+##teamcity[testStarted name='testRoleUserUserCanNotSeeUserList' locationHint='php_qn://D:\githubProjects\WebFrameworkDevProject_Eduard\tests\acceptance\UserCrudTest.php::\App\Tests\UserCrudTest::testRoleUserUserCanNotSeeUserList' flowId='4516']
+
+##teamcity[testFinished name='testRoleUserUserCanNotSeeUserList' duration='68' flowId='4516']
+
+##teamcity[testSuiteFinished name='App\Tests\UserCrudTest' flowId='4516']
+
+##teamcity[testSuiteFinished name='Project Test Suite' flowId='4516']
