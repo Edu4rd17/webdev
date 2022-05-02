@@ -2,28 +2,26 @@
 
 namespace App\Form;
 
-use App\Entity\Checkout;
+use App\Entity\Booking;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class CheckoutType extends AbstractType
+class BookingType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('accountHolderName')
-            ->add('cardNumber')
-            ->add('expiryDate')
-            ->add('securityCode')
-            ->add('tableNumber')
+            ->add('date')
+            ->add('time')
+            ->add('numberPeople')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Checkout::class,
+            'data_class' => Booking::class,
         ]);
     }
 }

@@ -2,32 +2,32 @@
 
 namespace App\Repository;
 
-use App\Entity\TableStatus;
+use App\Entity\Booking;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<TableStatus>
+ * @extends ServiceEntityRepository<Booking>
  *
- * @method TableStatus|null find($id, $lockMode = null, $lockVersion = null)
- * @method TableStatus|null findOneBy(array $criteria, array $orderBy = null)
- * @method TableStatus[]    findAll()
- * @method TableStatus[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Booking|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Booking|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Booking[]    findAll()
+ * @method Booking[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class TableStatusRepository extends ServiceEntityRepository
+class BookingRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, TableStatus::class);
+        parent::__construct($registry, Booking::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(TableStatus $entity, bool $flush = true): void
+    public function add(Booking $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -39,7 +39,7 @@ class TableStatusRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(TableStatus $entity, bool $flush = true): void
+    public function remove(Booking $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -48,15 +48,15 @@ class TableStatusRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return TableStatus[] Returns an array of TableStatus objects
+    //  * @return Booking[] Returns an array of Booking objects
     //  */
     /*
     public function findByExampleField($value)
     {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
+        return $this->createQueryBuilder('b')
+            ->andWhere('b.exampleField = :val')
             ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
+            ->orderBy('b.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
@@ -65,10 +65,10 @@ class TableStatusRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?TableStatus
+    public function findOneBySomeField($value): ?Booking
     {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
+        return $this->createQueryBuilder('b')
+            ->andWhere('b.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()

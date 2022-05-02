@@ -55,7 +55,7 @@
     <div class="page-container">
         <section id="menu">
             <article>
-                <h2 class="menu-title">Lets see the menu!</h2>
+                <h2 class="menu-title">Let's see the menu!</h2>
             </article>
         </section>
         <div class="menu-container">
@@ -67,7 +67,7 @@
                     <div class="menu-group">
                         {% for product in products %}
                             <div class="menu-item">
-                                <img src="../images/pizza.jpg" alt="Pizza" class="menu-item-image">
+                                <img src="../images/{{ product.image }} " alt="Pizza" class="menu-item-image">
                                 <div class="menu-item-text">
                                     <h3 class="menu-item-heading">
                                         <span class="menu-item-name">{{ product.productName }}</span>

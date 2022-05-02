@@ -2,30 +2,32 @@
 
 namespace App\Repository;
 
-use App\Entity\Reservation;
+use App\Entity\Table;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Reservation|null find($id, $lockMode = null, $lockVersion = null)
- * @method Reservation|null findOneBy(array $criteria, array $orderBy = null)
- * @method Reservation[]    findAll()
- * @method Reservation[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @extends ServiceEntityRepository<Table>
+ *
+ * @method Table|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Table|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Table[]    findAll()
+ * @method Table[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ReservationRepository extends ServiceEntityRepository
+class TableRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Reservation::class);
+        parent::__construct($registry, Table::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(Reservation $entity, bool $flush = true): void
+    public function add(Table $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -37,7 +39,7 @@ class ReservationRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(Reservation $entity, bool $flush = true): void
+    public function remove(Table $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -46,15 +48,15 @@ class ReservationRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Reservation[] Returns an array of Reservation objects
+    //  * @return Table[] Returns an array of Table objects
     //  */
     /*
     public function findByExampleField($value)
     {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.exampleField = :val')
             ->setParameter('val', $value)
-            ->orderBy('r.id', 'ASC')
+            ->orderBy('t.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
@@ -63,10 +65,10 @@ class ReservationRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Reservation
+    public function findOneBySomeField($value): ?Table
     {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()

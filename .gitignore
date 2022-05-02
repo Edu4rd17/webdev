@@ -25,3 +25,5 @@ build/teamcity.txt
 build/testdox.html
 .env
 .env.test
+
+/migrations/

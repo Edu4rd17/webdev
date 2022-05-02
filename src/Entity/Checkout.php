@@ -25,6 +25,9 @@ class Checkout
     #[ORM\Column(type: 'integer')]
     private $securityCode;
 
+    #[ORM\ManyToOne(targetEntity: Table::class, inversedBy: 'checkouts')]
+    private $tableNumber;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +77,18 @@ class Checkout
     public function setSecurityCode(int $securityCode): self
     {
         $this->securityCode = $securityCode;
+
+        return $this;
+    }
+
+    public function getTableNumber(): ?Table
+    {
+        return $this->tableNumber;
+    }
+
+    public function setTableNumber(?Table $tableNumber): self
+    {
+        $this->tableNumber = $tableNumber;
 
         return $this;
     }

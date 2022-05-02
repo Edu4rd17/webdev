@@ -18,12 +18,12 @@ class TableStatus
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
-    #[ORM\OneToMany(mappedBy: 'tableStatus', targetEntity: Reservation::class)]
-    private $reservations;
+    #[ORM\OneToMany(mappedBy: 'status', targetEntity: Table::class)]
+    private $tables;
 
     public function __construct()
     {
-        $this->reservations = new ArrayCollection();
+        $this->tables = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -44,29 +44,29 @@ class TableStatus
     }
 
     /**
-     * @return Collection<int, Reservation>
+     * @return Collection<int, Table>
      */
-    public function getReservations(): Collection
+    public function getTables(): Collection
     {
-        return $this->reservations;
+        return $this->tables;
     }
 
-    public function addReservation(Reservation $reservation): self
+    public function addTable(Table $table): self
     {
-        if (!$this->reservations->contains($reservation)) {
-            $this->reservations[] = $reservation;
-            $reservation->setTableStatus($this);
+        if (!$this->tables->contains($table)) {
+            $this->tables[] = $table;
+            $table->setStatus($this);
         }
 
         return $this;
     }
 
-    public function removeReservation(Reservation $reservation): self
+    public function removeTable(Table $table): self
     {
-        if ($this->reservations->removeElement($reservation)) {
+        if ($this->tables->removeElement($table)) {
             // set the owning side to null (unless already changed)
-            if ($reservation->getTableStatus() === $this) {
-                $reservation->setTableStatus(null);
+            if ($table->getStatus() === $this) {
+                $table->setStatus(null);
             }
         }
 

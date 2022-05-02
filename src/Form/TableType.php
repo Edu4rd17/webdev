@@ -2,26 +2,26 @@
 
 namespace App\Form;
 
-use App\Entity\Reservation;
+use App\Entity\Table;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ReservationType extends AbstractType
+class TableType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('tableNumber')
-            ->add('tableCapacity')
-            ->add('tableStatus')
+            ->add('number')
+            ->add('capacity')
+            ->add('status')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Reservation::class,
+            'data_class' => Table::class,
         ]);
     }
 }

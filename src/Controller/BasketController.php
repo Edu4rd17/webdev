@@ -19,9 +19,9 @@ class BasketController extends AbstractController
     }
 
     #[Route('/basket', name: 'app_basket')]
-    #[IsGranted('ROLE_USER')]
     public function index(): Response
     {
+        $totalPrice = $this->addTotalPrice();
         $template = 'basket/index.html.twig';
         $args = [];
         $session = $this->requestStack->getSession();
@@ -70,6 +70,21 @@ class BasketController extends AbstractController
 
         //redirect even if changes or not
         return $this->redirectToRoute('app_basket');
+    }
+
+    public function addTotalPrice()
+    {
+        $itemsHolder = [];
+        $totalPrice = 0;
+
+        $session = $this->requestStack->getSession();
+        if ($session->has('basket')) {
+            $sumTotal = $session->get('basket');
+            foreach ($sumTotal as $itemsHolder) {
+                $totalPrice += $itemsHolder->getProductPrice();
+            }
+        }
+        return $totalPrice;
     }
 
     #[Route('/delete/{id}', name: 'basket_delete')]

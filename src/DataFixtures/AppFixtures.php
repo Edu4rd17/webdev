@@ -7,6 +7,7 @@ use App\Factory\OrderFactory;
 use App\Factory\OrderStatusFactory;
 use App\Factory\ProductFactory;
 use App\Factory\ReservationFactory;
+use App\Factory\TableFactory;
 use App\Factory\TableStatusFactory;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -84,7 +85,7 @@ class AppFixtures extends Fixture
             'product_price' => 14.99,
             'is_available' => true,
             'product_description' => 'Delicious steak with vegetables.',
-            'image' => 'steak.png',
+            'image' => 'steak.jpg',
             'category' => $entree
         ]);
 
@@ -93,7 +94,7 @@ class AppFixtures extends Fixture
             'product_price' => 6.99,
             'is_available' => true,
             'product_description' => 'Delicious dessert with vegetables.',
-            'image' => 'pancakes.png',
+            'image' => 'pancakes.jpg',
             'category' => $dessert
         ]);
 
@@ -101,8 +102,8 @@ class AppFixtures extends Fixture
             'product_name' => 'Pizza',
             'product_price' => 4.99,
             'is_available' => false,
-            'product_description' => 'Delicious pizza ith vegetables.',
-            'image' => 'pizza.png',
+            'product_description' => 'Delicious pizza with vegetables.',
+            'image' => 'pizza.jpg',
             'category' => $main
         ]);
 
@@ -118,34 +119,30 @@ class AppFixtures extends Fixture
             'name' => 'Reserved'
         ]);
 
-        ReservationFactory::createOne([
-            'tableNumber' => '1',
-            'tableCapacity' => '4',
-            'tableStatus' => $tableAvailable
+        TableFactory::createOne([
+            'number' => 1,
+            'capacity' => 2,
+            'status' => $tableAvailable
         ]);
-
-        ReservationFactory::createOne([
-            'tableNumber' => '2',
-            'tableCapacity' => '4',
-            'tableStatus' => $tableUnavailable
+        TableFactory::createOne([
+            'number' => 2,
+            'capacity' => 3,
+            'status' => $tableAvailable
         ]);
-
-        ReservationFactory::createOne([
-            'tableNumber' => '3',
-            'tableCapacity' => '6',
-            'tableStatus' => $tableReserved
+        TableFactory::createOne([
+            'number' => 3,
+            'capacity' => 4,
+            'status' => $tableAvailable
         ]);
-
-        ReservationFactory::createOne([
-            'tableNumber' => '4',
-            'tableCapacity' => '2',
-            'tableStatus' => $tableAvailable
+        TableFactory::createOne([
+            'number' => 4,
+            'capacity' => 4,
+            'status' => $tableAvailable
         ]);
-
-        ReservationFactory::createOne([
-            'tableNumber' => '5',
-            'tableCapacity' => '8',
-            'tableStatus' => $tableAvailable
+        TableFactory::createOne([
+            'number' => 5,
+            'capacity' => 8,
+            'status' => $tableAvailable
         ]);
 
 //        $cooking = OrderStatusFactory::createOne([
