@@ -1,33 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tests>
-  <test className="App\Tests\HomePageTest" methodName="testSomething" prettifiedClassName="Home Page (App\Tests\HomePage)" prettifiedMethodName="Something" status="3" time="2.9706456" size="-1" groups="default" exceptionLine="15" exceptionMessage="Failed asserting that Symfony\Component\DomCrawler\Crawler Object &amp;0000000000000f260000000000000000 (&#10;    'uri' =&gt; 'http://localhost/'&#10;    'defaultNamespacePrefix' =&gt; 'default'&#10;    'namespaces' =&gt; Array &amp;0 ()&#10;    'cachedNamespaces' =&gt; ArrayObject Object &amp;0000000000000e800000000000000000 ()&#10;    'baseHref' =&gt; 'http://localhost/'&#10;    'document' =&gt; DOMDocument Object &amp;0000000000000e7b0000000000000000 (&#10;        'config' =&gt; null&#10;    )&#10;    'nodes' =&gt; Array &amp;1 (&#10;        0 =&gt; DOMElement Object &amp;0000000000000e7c0000000000000000 (&#10;            'schemaTypeInfo' =&gt; null&#10;        )&#10;    )&#10;    'isHtml' =&gt; true&#10;    'html5Parser' =&gt; null&#10;) matches selector &quot;h1&quot; and the text &quot;Welcome to BistroLoco!&quot; of the node matching selector &quot;h1&quot; contains &quot;Hello World&quot;.">
+  <test className="App\Tests\unit\HomepageTest" methodName="testHomePageTitleText" prettifiedClassName="Homepage (App\Tests\unit\Homepage)" prettifiedMethodName="Home page title text" status="0" time="0.2077876" size="-1" groups="default">
     <group name="default"/>
   </test>
-  <test className="App\Tests\ProductCrudTest" methodName="testMenuPageTitleText" prettifiedClassName="Product Crud (App\Tests\ProductCrud)" prettifiedMethodName="Menu page title text" status="0" time="0.1566629" size="-1" groups="default">
+  <test className="App\Tests\unit\HomepageTest" methodName="testPublicUserCanSeeWelcomeBackMessageWhenLoggedIn" prettifiedClassName="Homepage (App\Tests\unit\Homepage)" prettifiedMethodName="Public user can see welcome back message when logged in" status="0" time="0.0494945" size="-1" groups="default">
     <group name="default"/>
   </test>
-  <test className="App\Tests\ProductCrudTest" methodName="testPublicUserCanNotSeeNewProductLink" prettifiedClassName="Product Crud (App\Tests\ProductCrud)" prettifiedMethodName="Public user can not see new product link" status="0" time="0.0324331" size="-1" groups="default">
+  <test className="App\Tests\unit\HomepageTest" methodName="testUserCanNotSeeLoginRegisterLinksWhenLoggedIn" prettifiedClassName="Homepage (App\Tests\unit\Homepage)" prettifiedMethodName="User can not see login register links when logged in" status="0" time="0.0370579" size="-1" groups="default">
     <group name="default"/>
   </test>
-  <test className="App\Tests\ProductCrudTest" methodName="testRoleAdminUserCanSeeNewProductLink" prettifiedClassName="Product Crud (App\Tests\ProductCrud)" prettifiedMethodName="Role admin user can see new product link" status="0" time="0.0445491" size="-1" groups="default">
+  <test className="App\Tests\unit\HomepageTest" methodName="testUserCanSeeLoginRegisterLinksWhenNotLoggedIn" prettifiedClassName="Homepage (App\Tests\unit\Homepage)" prettifiedMethodName="User can see login register links when not logged in" status="0" time="0.0217766" size="-1" groups="default">
     <group name="default"/>
   </test>
-  <test className="App\Tests\ProductCrudTest" methodName="testUserCanNotSeeAddToBasketLinkUnlessLoggedIn" prettifiedClassName="Product Crud (App\Tests\ProductCrud)" prettifiedMethodName="User can not see add to basket link unless logged in" status="0" time="0.0508524" size="-1" groups="default">
+  <test className="App\Tests\ProductCrudTest" methodName="testMenuPageTitleText" prettifiedClassName="Product Crud (App\Tests\ProductCrud)" prettifiedMethodName="Menu page title text" status="0" time="0.035506" size="-1" groups="default">
     <group name="default"/>
   </test>
-  <test className="App\Tests\ProductCrudTest" methodName="testAccessDeniedForRoleUserWhenTryAccessNewProduct" prettifiedClassName="Product Crud (App\Tests\ProductCrud)" prettifiedMethodName="Access denied for role user when try access new product" status="0" time="0.0463854" size="-1" groups="default">
+  <test className="App\Tests\ProductCrudTest" methodName="testPublicUserCanNotSeeNewProductLink" prettifiedClassName="Product Crud (App\Tests\ProductCrud)" prettifiedMethodName="Public user can not see new product link" status="0" time="0.0201581" size="-1" groups="default">
     <group name="default"/>
   </test>
-  <test className="App\Tests\ProductDatabaseTest" methodName="testNumberOfProductMatchFixtures" prettifiedClassName="Product Database (App\Tests\ProductDatabase)" prettifiedMethodName="Number of product match fixtures" status="0" time="0.0284295" size="-1" groups="default">
+  <test className="App\Tests\ProductCrudTest" methodName="testRoleChefUserCanSeeNewProductLink" prettifiedClassName="Product Crud (App\Tests\ProductCrud)" prettifiedMethodName="Role chef user can see new product link" status="0" time="0.0256255" size="-1" groups="default">
     <group name="default"/>
   </test>
-  <test className="WebProjectTests\SampleTest" methodName="testItWorks" prettifiedClassName="Sample (WebProjectTests\Sample)" prettifiedMethodName="It works" status="0" time="0.0009338" size="-1" groups="default">
+  <test className="App\Tests\ProductCrudTest" methodName="testUserCanNotSeeAddToBasketLinkUnlessLoggedIn" prettifiedClassName="Product Crud (App\Tests\ProductCrud)" prettifiedMethodName="User can not see add to basket link unless logged in" status="0" time="0.0441204" size="-1" groups="default">
     <group name="default"/>
   </test>
-  <test className="App\Tests\UserCrudTest" methodName="testRoleAdminUserCanSeeUserList" prettifiedClassName="User Crud (App\Tests\UserCrud)" prettifiedMethodName="Role admin user can see user list" status="0" time="0.0591528" size="-1" groups="default">
+  <test className="App\Tests\ProductCrudTest" methodName="testAccessDeniedForRoleUserWhenTryAccessNewProduct" prettifiedClassName="Product Crud (App\Tests\ProductCrud)" prettifiedMethodName="Access denied for role user when try access new product" status="0" time="0.0435978" size="-1" groups="default">
     <group name="default"/>
   </test>
-  <test className="App\Tests\UserCrudTest" methodName="testRoleUserUserCanNotSeeUserList" prettifiedClassName="User Crud (App\Tests\UserCrud)" prettifiedMethodName="Role user user can not see user list" status="0" time="0.0833364" size="-1" groups="default">
+  <test className="App\Tests\ProductDatabaseTest" methodName="testNumberOfProductMatchFixtures" prettifiedClassName="Product Database (App\Tests\ProductDatabase)" prettifiedMethodName="Number of product match fixtures" status="0" time="0.0180998" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="WebProjectTests\SampleTest" methodName="testItWorks" prettifiedClassName="Sample (WebProjectTests\Sample)" prettifiedMethodName="It works" status="0" time="0.0003766" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="App\Tests\UserCrudTest" methodName="testRoleAdminUserCanSeeUserList" prettifiedClassName="User Crud (App\Tests\UserCrud)" prettifiedMethodName="Role admin user can see user list" status="0" time="0.0584564" size="-1" groups="default">
+    <group name="default"/>
+  </test>
+  <test className="App\Tests\UserCrudTest" methodName="testRoleUserUserCanNotSeeUserList" prettifiedClassName="User Crud (App\Tests\UserCrud)" prettifiedMethodName="Role user user can not see user list" status="0" time="0.0675436" size="-1" groups="default">
     <group name="default"/>
   </test>
 </tests>

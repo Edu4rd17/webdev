@@ -41,6 +41,12 @@
         {% if is_granted('ROLE_CHEF') %}
             <a href="{{ path("app_order_index") }}">View orders</a>
         {% endif %}
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path("user_index") }}">Dashboard</a>
+        {% endif %}
+        {% if is_granted('ROLE_WAITER') %}
+            <a href="{{ path("app_reservation_index") }}">Reservations</a>
+        {% endif %}
         {% block navbar %}
             <a href="{{ path("default") }}">Home</a>
             <a href="{{ path("app_product_index") }}">Menu</a>

@@ -3,6 +3,8 @@
 namespace App\DataFixtures;
 
 use App\Factory\CategoryFactory;
+use App\Factory\OrderFactory;
+use App\Factory\OrderStatusFactory;
 use App\Factory\ProductFactory;
 use App\Factory\ReservationFactory;
 use App\Factory\TableStatusFactory;
@@ -74,7 +76,7 @@ class AppFixtures extends Fixture
         ]);
 
         $dessert = CategoryFactory::createOne([
-            'category_type' => 'Deserts'
+            'category_type' => 'Dessert'
         ]);
 
         ProductFactory::createOne([
@@ -82,6 +84,7 @@ class AppFixtures extends Fixture
             'product_price' => 14.99,
             'is_available' => true,
             'product_description' => 'Delicious steak with vegetables.',
+            'image' => 'steak.png',
             'category' => $entree
         ]);
 
@@ -89,15 +92,17 @@ class AppFixtures extends Fixture
             'product_name' => 'Pancakes',
             'product_price' => 6.99,
             'is_available' => true,
-            'product_description' => 'Delicious steak with vegetables.',
+            'product_description' => 'Delicious dessert with vegetables.',
+            'image' => 'pancakes.png',
             'category' => $dessert
         ]);
 
         ProductFactory::createOne([
-            'product_name' => 'Soup',
+            'product_name' => 'Pizza',
             'product_price' => 4.99,
             'is_available' => false,
-            'product_description' => 'Delicious steak with vegetables.',
+            'product_description' => 'Delicious pizza ith vegetables.',
+            'image' => 'pizza.png',
             'category' => $main
         ]);
 
@@ -142,5 +147,44 @@ class AppFixtures extends Fixture
             'tableCapacity' => '8',
             'tableStatus' => $tableAvailable
         ]);
+
+//        $cooking = OrderStatusFactory::createOne([
+//            'status_name' => 'Cooking'
+//        ]);
+//
+//        $plated = OrderStatusFactory::createOne([
+//            'status_name' => 'Plated(to be served)'
+//        ]);
+//
+//        $served = OrderStatusFactory::createOne([
+//            'status_name' => 'Served(to be paid)'
+//        ]);
+//
+//        $paid = OrderStatusFactory::createOne([
+//            'status_name' => 'Paid'
+//        ]);
+//
+//        OrderFactory::createOne([
+//            'name' => 'Pizza Margarita',
+//            'type' => $main,
+//            'time_placed' =>\DateTimeInterface::RFC1123,
+//            'order_status' => $cooking
+//        ]);
+//
+//        OrderFactory::createOne([
+//            'name' => 'Steak',
+//            'type' => $main,
+//            'time_placed' =>\DateTimeInterface::RFC1123,
+//            'order_status' => $cooking
+//        ]);
+//
+//        OrderFactory::createOne([
+//            'name' => 'Pancakes',
+//            'type' => $dessert,
+//            'time_placed' =>\DateTimeInterface::RFC1123,
+//            'order_status' => $cooking
+//        ]);
+
+
     }
 }
