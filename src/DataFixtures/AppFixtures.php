@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Factory\BookingFactory;
 use App\Factory\CategoryFactory;
 use App\Factory\OrderFactory;
 use App\Factory\OrderStatusFactory;
@@ -144,6 +145,10 @@ class AppFixtures extends Fixture
             'capacity' => 8,
             'status' => $tableAvailable
         ]);
+
+//        BookingFactory::createOne([
+//            'date' => 2017-02-02,
+//        ]);
 
         $cooking = OrderStatusFactory::createOne([
             'status_name' => 'Cooking'

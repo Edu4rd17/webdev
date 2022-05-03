@@ -14,6 +14,7 @@ class ProductCrudTest extends WebTestCase
     public function testMenuPageTitleText(): void
     {
         $client = static::createClient();
+        $client->followRedirects();
         $crawler = $client->request('GET', '/product/');
 
         $this->assertResponseIsSuccessful();
@@ -23,7 +24,7 @@ class ProductCrudTest extends WebTestCase
     public function testPublicUserCanNotSeeNewProductLink(): void
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/product');
+        $crawler = $client->request('GET', '/product/');
 
         $contentSelector = '#new_product_link';
         $this->assertSelectorNotExists($contentSelector);

@@ -25,7 +25,7 @@ class Booking
     #[ORM\Column(type: 'string', length: 255)]
     private $fullName;
 
-    #[ORM\Column(type: 'integer')]
+    #[ORM\Column(type: 'string', length: 50)]
     private $phoneNumber;
 
     public function getId(): ?int

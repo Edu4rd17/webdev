@@ -38,7 +38,7 @@ class UserCrudTest extends WebTestCase
         $this->assertSelectorTextContains($contentSelector, $expectedText);
     }
 
-    public function testRoleUserUserCanNotSeeUserList(): void
+    public function testRoleUserCanNotSeeUserList(): void
     {
         // Arrange
         $method = 'GET';
