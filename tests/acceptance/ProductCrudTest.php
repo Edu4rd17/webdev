@@ -83,52 +83,53 @@ class ProductCrudTest extends WebTestCase
     }
 
 
-//    public function testRoleChefCanAddProduct(): void
-//    {
-//        // Arrange - create client
-//        $client = static::createClient();
-//        $client->followRedirects();
-//
-//        // Arrange - get repository references
-//        $productRepository = static::getContainer()->get(ProductRepository::class);
-//        $userRepository = static::getContainer()->get(UserRepository::class);
-//        $categoryRepository = static::getContainer()->get(CategoryRepository::class);
-//
-//        // Arrange - get admin user - from fixtures
-//        $userEmail = 'chef@gmail.com';
-//        $chefUser = $userRepository->findOneByEmail($userEmail);
-//
-//        // Arrange - get Main category - from fixtures
-//        $categoryType = 'Main';
-//        $category = $categoryRepository->findOneByCategoryType($categoryType);
-//
-//        // Arrange - request parameters
-//        $httpMethod = 'GET';
-//        $url = '/product/new';
-//
-//        // Arrange - count number modules BEFORE adding
-//        $products = $productRepository->findAll();
-//        $numberOfProductsBeforeOneCreated = count($products);
-//        $expectedNumberOfProductsAfterOneCreated = $numberOfProductsBeforeOneCreated + 1;
-//
-//        // Act - login as ADMIN user
-//        $client->chefUser($adminUser);
-//
-//        // Act - fill in form to create new module
-//        $submitButtonName = 'Save';
-//        $client->submit($client->request($httpMethod, $url)->selectButton($submitButtonName)->form([
-//            'product[productName]' => 'Food Test',
-//            'product[productPrice]' => '11.99',
-//            'product[isAvailable]' => true,
-//            'product[productDescription]' => 'Amazing food Test',
-//            'product[category]' => $category->getId(), // need to submit ID of category, not name, since a related object
-//        ]));
-//
-//        // Act - get array of product AFTER adding
-//        $products = $productRepository->findAll();
-//
-//        // Assert
-//        $this->assertCount($expectedNumberOfProductsAfterOneCreated, $products);
-//    }
+    public function testRoleChefCanAddProduct(): void
+    {
+        // Arrange - create client
+        $client = static::createClient();
+        $client->followRedirects();
+
+        // Arrange - get repository references
+        $productRepository = static::getContainer()->get(ProductRepository::class);
+        $userRepository = static::getContainer()->get(UserRepository::class);
+        $categoryRepository = static::getContainer()->get(CategoryRepository::class);
+
+        // Arrange - get admin user - from fixtures
+        $userEmail = 'chef@gmail.com';
+        $chefUser = $userRepository->findOneByEmail($userEmail);
+
+        // Arrange - get Main category - from fixtures
+        $categoryType = 'Main';
+        $category = $categoryRepository->findOneByCategoryType($categoryType);
+
+        // Arrange - request parameters
+        $httpMethod = 'GET';
+        $url = '/product/new';
+
+        // Arrange - count number modules BEFORE adding
+        $products = $productRepository->findAll();
+        $numberOfProductsBeforeOneCreated = count($products);
+        $expectedNumberOfProductsAfterOneCreated = $numberOfProductsBeforeOneCreated + 1;
+
+        // Act - login as ADMIN user
+        $client->loginUser($chefUser);
+
+        // Act - fill in form to create new module
+        $submitButtonName = 'Save';
+        $client->submit($client->request($httpMethod, $url)->selectButton($submitButtonName)->form([
+            'product[productName]' => 'Food Test',
+            'product[productPrice]' => '11.99',
+            'product[isAvailable]' => true,
+            'product[productDescription]' => 'Amazing food Test',
+            'product[image]' => 'image.jpg',
+            'product[category]' => $category->getId(), // need to submit ID of category, not name, since a related object
+        ]));
+
+        // Act - get array of product AFTER adding
+        $products = $productRepository->findAll();
+
+        // Assert
+        $this->assertCount($expectedNumberOfProductsAfterOneCreated, $products);
+    }
 
 }

@@ -11,7 +11,7 @@ class ProductDatabaseTest extends WebTestCase
     {
         $client = static::createClient();
         $productRepository = static::getContainer()->get(ProductRepository::class);
-        $expectedNumberOfEntities = 3;
+        $expectedNumberOfEntities = 11;
 
         $productEntities = $productRepository->findAll();
 
