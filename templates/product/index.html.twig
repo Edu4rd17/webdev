@@ -15,23 +15,23 @@
         <table class="table">
             <thead>
             <tr>
-                <th>Id</th>
-                <th>ProductName</th>
-                <th>ProductPrice</th>
-                <th>IsAvailable</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Availability</th>
                 <th>ProductDescription</th>
-                <th>ProductCategory</th>
+                <th>Product Image</th>
+                <th>Product Category</th>
                 <th>Actions</th>
             </tr>
             </thead>
             <tbody>
             {% for product in products %}
                 <tr>
-                    <td>{{ product.id }}</td>
                     <td>{{ product.productName }}</td>
                     <td>{{ product.productPrice }}</td>
                     <td>{{ product.isAvailable ? 'Yes' : 'No' }}</td>
                     <td>{{ product.productDescription }}</td>
+                    <td>{{ product.image }}</td>
                     <td>
                         <a href="{{ path('app_category_show', {'id': product.category.id}) }}">
                             {{ product.category }}

@@ -8,7 +8,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Date</th>
                 <th>Time</th>
                 <th>FullName</th>
@@ -19,7 +18,6 @@
         <tbody>
         {% for booking in bookings %}
             <tr>
-                <td>{{ booking.id }}</td>
                 <td>{{ booking.date ? booking.date|date('Y-m-d') : '' }}</td>
                 <td>{{ booking.time ? booking.time|date('H:i:s') : '' }}</td>
                 <td>{{ booking.fullName }}</td>
