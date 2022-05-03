@@ -5,12 +5,14 @@ namespace App\Controller;
 use App\Entity\OrderStatus;
 use App\Form\OrderStatusType;
 use App\Repository\OrderStatusRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/order/status')]
+#[IsGranted('ROLE_CHEF')]
 class OrderStatusController extends AbstractController
 {
     #[Route('/', name: 'app_order_status_index', methods: ['GET'])]
@@ -67,7 +69,7 @@ class OrderStatusController extends AbstractController
     #[Route('/{id}', name: 'app_order_status_delete', methods: ['POST'])]
     public function delete(Request $request, OrderStatus $orderStatus, OrderStatusRepository $orderStatusRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$orderStatus->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $orderStatus->getId(), $request->request->get('_token'))) {
             $orderStatusRepository->remove($orderStatus);
         }
 

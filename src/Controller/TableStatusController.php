@@ -5,12 +5,14 @@ namespace App\Controller;
 use App\Entity\TableStatus;
 use App\Form\TableStatusType;
 use App\Repository\TableStatusRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/table/status')]
+#[IsGranted('ROLE_ADMIN')]
 class TableStatusController extends AbstractController
 {
     #[Route('/', name: 'app_table_status_index', methods: ['GET'])]
@@ -67,7 +69,7 @@ class TableStatusController extends AbstractController
     #[Route('/{id}', name: 'app_table_status_delete', methods: ['POST'])]
     public function delete(Request $request, TableStatus $tableStatus, TableStatusRepository $tableStatusRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$tableStatus->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $tableStatus->getId(), $request->request->get('_token'))) {
             $tableStatusRepository->remove($tableStatus);
         }
 

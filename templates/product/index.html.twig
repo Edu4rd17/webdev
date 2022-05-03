@@ -61,11 +61,11 @@
         <div class="menu-container">
             <div class="menu">
                 <div class="menu-group-holder">
-                    <h1 class="menu-group-heading">Entree</h1>
+                    <h1 class="menu-group-heading">Starters</h1>
                 </div>
                 <div class="menu-group">
                     {% for product in products %}
-                        {% if product.category == 'Entree' %}
+                        {% if product.category == 'Starters' %}
                             <div class="menu-item">
                                 <img src="../images/{{ product.image }} " alt="Pizza" class="menu-item-image">
                                 <div class="menu-item-text">
@@ -159,6 +159,41 @@
                 </div>
             </div>
         </div>
+
+        <div class="menu-container">
+            <div class="menu">
+                <div class="menu-group-holder">
+                    <h1 class="menu-group-heading">Drinks</h1>
+                </div>
+                <div class="menu-group">
+                    {% for product in products %}
+                        {% if product.category == 'Drinks' %}
+                            <div class="menu-item">
+                                <img src="../images/{{ product.image }} " alt="Pizza" class="menu-item-image">
+                                <div class="menu-item-text">
+                                    <h3 class="menu-item-heading">
+                                        <span class="menu-item-name">{{ product.productName }}</span>
+                                        <span class="menu-item-price">€{{ product.productPrice }}</span>
+                                    </h3>
+                                    <p class="menu-item-description">
+                                        {{ product.productDescription }}
+                                    </p>
+                                    {% if app.user %}
+                                        <p class="basket">
+                                            <a class="add-basket"
+                                               href="{{ path('add_basket', {'id': product.id}) }}"
+                                               id="add_to_basket_link">Add to
+                                                basket</a>
+                                        </p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
 
     </div>
 {% endblock %}

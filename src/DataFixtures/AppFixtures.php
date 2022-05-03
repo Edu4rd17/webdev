@@ -69,8 +69,8 @@ class AppFixtures extends Fixture
             'role' => 'ROLE_WAITER'
         ]);
 
-        $entree = CategoryFactory::createOne([
-            'category_type' => 'Entree'
+        $starters = CategoryFactory::createOne([
+            'category_type' => 'Starters'
         ]);
 
         $main = CategoryFactory::createOne([
@@ -81,31 +81,89 @@ class AppFixtures extends Fixture
             'category_type' => 'Dessert'
         ]);
 
+        $drinks = CategoryFactory::createOne([
+            'category_type' => 'Drinks'
+        ]);
+
+        ProductFactory::createOne([
+            'product_name' => 'Antipasto platter',
+            'product_price' => 10.99,
+            'is_available' => true,
+            'product_description' => 'Fine antipasto with all the favourites, then share them with a winning double of homemade dips.',
+            'image' => 'antipasto.jpeg',
+            'category' => $starters
+        ]);
+
+        ProductFactory::createOne([
+            'product_name' => 'Chicken and spinach dumplings',
+            'product_price' => 7.99,
+            'is_available' => true,
+            'product_description' => 'Amazing chicken and spinach dumplings to share with your loved ones.',
+            'image' => 'chicken.jpeg',
+            'category' => $starters
+        ]);
+
+        ProductFactory::createOne([
+            'product_name' => 'Crispy bocconcini with tomato chilli sauce',
+            'product_price' => 11.99,
+            'is_available' => true,
+            'product_description' => 'Creamy bocconcini is golden fried for an enticing crunch, and served with a spicy tomato dip.',
+            'image' => 'crispy-bocconcini.jpeg',
+            'category' => $starters
+        ]);
+
         ProductFactory::createOne([
             'product_name' => 'Steak',
             'product_price' => 14.99,
             'is_available' => true,
             'product_description' => 'Delicious steak with vegetables.',
             'image' => 'steak.jpg',
-            'category' => $entree
+            'category' => $main
+        ]);
+
+        ProductFactory::createOne([
+            'product_name' => 'Roast duck with Marsala gravy',
+            'product_price' => 13.99,
+            'is_available' => true,
+            'product_description' => 'This crispy roast duck is a fuss-free alternative to the traditional Sunday roast.',
+            'image' => 'duck.jpg',
+            'category' => $main
+        ]);
+
+        ProductFactory::createOne([
+            'product_name' => 'Pizza',
+            'product_price' => 7.99,
+            'is_available' => false,
+            'product_description' => 'Delicious pizza with an amazing tomato sauce.',
+            'image' => 'pizza.jpg',
+            'category' => $main
         ]);
 
         ProductFactory::createOne([
             'product_name' => 'Pancakes',
-            'product_price' => 6.99,
+            'product_price' => 4.99,
             'is_available' => true,
-            'product_description' => 'Delicious dessert with vegetables.',
+            'product_description' => 'Delicious pancakes with nutella sauce and pieces of strawberry.',
             'image' => 'pancakes.jpg',
             'category' => $dessert
         ]);
 
         ProductFactory::createOne([
-            'product_name' => 'Pizza',
-            'product_price' => 4.99,
-            'is_available' => false,
-            'product_description' => 'Delicious pizza with vegetables.',
-            'image' => 'pizza.jpg',
-            'category' => $main
+            'product_name' => 'White Whine',
+            'product_price' => 8.99,
+            'is_available' => true,
+            'product_description' => 'Old age wine. Perfect with our food.',
+            'image' => 'wine.jpg',
+            'category' => $drinks
+        ]);
+
+        ProductFactory::createOne([
+            'product_name' => 'Apple Juice',
+            'product_price' => 4.50,
+            'is_available' => true,
+            'product_description' => 'Flavourful apple juice.',
+            'image' => 'apple.jpeg',
+            'category' => $drinks
         ]);
 
         $tableAvailable = TableStatusFactory::createOne([
@@ -146,10 +204,6 @@ class AppFixtures extends Fixture
             'status' => $tableAvailable
         ]);
 
-//        BookingFactory::createOne([
-//            'date' => 2017-02-02,
-//        ]);
-
         $cooking = OrderStatusFactory::createOne([
             'status_name' => 'Cooking'
         ]);
@@ -165,28 +219,6 @@ class AppFixtures extends Fixture
         $paid = OrderStatusFactory::createOne([
             'status_name' => 'Paid'
         ]);
-//
-//        OrderFactory::createOne([
-//            'name' => 'Pizza Margarita',
-//            'type' => $main,
-//            'time_placed' =>\DateTimeInterface::RFC1123,
-//            'order_status' => $cooking
-//        ]);
-//
-//        OrderFactory::createOne([
-//            'name' => 'Steak',
-//            'type' => $main,
-//            'time_placed' =>\DateTimeInterface::RFC1123,
-//            'order_status' => $cooking
-//        ]);
-//
-//        OrderFactory::createOne([
-//            'name' => 'Pancakes',
-//            'type' => $dessert,
-//            'time_placed' =>\DateTimeInterface::RFC1123,
-//            'order_status' => $cooking
-//        ]);
-
 
     }
 }
