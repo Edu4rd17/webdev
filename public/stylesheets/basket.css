@@ -12,6 +12,10 @@
     margin-top: 30px;
 }
 
+.empty-basketText {
+    text-align: center;
+}
+
 .empty-basket {
     text-decoration: none;
     background-color: #2B2D42;
@@ -116,11 +120,11 @@ td img {
     border-radius: 10px;
 }
 
-.price-label{
+.price-label {
     padding-right: 5px;
 }
 
-.checkout{
+.checkout {
     margin-left: 10px;
 }
 
@@ -150,7 +154,7 @@ th:last-child {
         text-align: center;
     }
 
-    .total-price{
+    .total-price {
         padding-top: 10px;
     }
 }

@@ -23,7 +23,9 @@ class BasketController extends AbstractController
     {
         $totalPrice = $this->addTotalPrice();
         $template = 'basket/index.html.twig';
-        $args = [];
+        $args = [
+            'totalPrice' => $totalPrice
+        ];
         $session = $this->requestStack->getSession();
         if ($session->has('basket')) {
             $products = $session->get('basket');

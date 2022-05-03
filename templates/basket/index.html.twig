@@ -15,7 +15,7 @@
     {% set basket =  app.session.get('basket') %}
 
     {% if basket is null %}
-        <p>You have no products in your basket</p>
+        <p class="empty-basketText">You have no products in your basket</p>
     {% else %}
         <div class="small-container cart-page">
             <table>
@@ -55,7 +55,7 @@
                 <div class="total-price">
                     <div class="price">
                         <p class="price-label">Total Price:</p>
-{#                        <p class="price-sum">{{ basket.totalPrice }}</p>#}
+                        <p class="price-sum">{{ totalPrice }}</p>
                         <div class="checkout">
                             <a class="checkout-button" href="{{ path('app_checkout_new') }}">Checkout</a>
                         </div>

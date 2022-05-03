@@ -11,6 +11,7 @@
                 <th>Id</th>
                 <th>Number</th>
                 <th>Capacity</th>
+                <th>Availability</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -20,6 +21,7 @@
                 <td>{{ table.id }}</td>
                 <td>{{ table.number }}</td>
                 <td>{{ table.capacity }}</td>
+                <td>{{ table.status}}</td>
                 <td>
                     <a href="{{ path('app_table_show', {'id': table.id}) }}">show</a>
                     <a href="{{ path('app_table_edit', {'id': table.id}) }}">edit</a>

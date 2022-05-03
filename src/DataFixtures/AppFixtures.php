@@ -145,21 +145,21 @@ class AppFixtures extends Fixture
             'status' => $tableAvailable
         ]);
 
-//        $cooking = OrderStatusFactory::createOne([
-//            'status_name' => 'Cooking'
-//        ]);
-//
-//        $plated = OrderStatusFactory::createOne([
-//            'status_name' => 'Plated(to be served)'
-//        ]);
-//
-//        $served = OrderStatusFactory::createOne([
-//            'status_name' => 'Served(to be paid)'
-//        ]);
-//
-//        $paid = OrderStatusFactory::createOne([
-//            'status_name' => 'Paid'
-//        ]);
+        $cooking = OrderStatusFactory::createOne([
+            'status_name' => 'Cooking'
+        ]);
+
+        $plated = OrderStatusFactory::createOne([
+            'status_name' => 'Plated(to be served)'
+        ]);
+
+        $served = OrderStatusFactory::createOne([
+            'status_name' => 'Served(to be paid)'
+        ]);
+
+        $paid = OrderStatusFactory::createOne([
+            'status_name' => 'Paid'
+        ]);
 //
 //        OrderFactory::createOne([
 //            'name' => 'Pizza Margarita',

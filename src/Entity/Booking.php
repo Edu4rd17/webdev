@@ -22,6 +22,12 @@ class Booking
     #[ORM\Column(type: 'time')]
     private $time;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $fullName;
+
+    #[ORM\Column(type: 'integer')]
+    private $phoneNumber;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +65,30 @@ class Booking
     public function setTime(\DateTimeInterface $time): self
     {
         $this->time = $time;
+
+        return $this;
+    }
+
+    public function getFullName(): ?string
+    {
+        return $this->fullName;
+    }
+
+    public function setFullName(string $fullName): self
+    {
+        $this->fullName = $fullName;
+
+        return $this;
+    }
+
+    public function getPhoneNumber(): ?int
+    {
+        return $this->phoneNumber;
+    }
+
+    public function setPhoneNumber(int $phoneNumber): self
+    {
+        $this->phoneNumber = $phoneNumber;
 
         return $this;
     }

@@ -55,6 +55,7 @@
                 <a href="{{ path("app_register") }}">Register</a>
             {% endif %}
             {% if app.user %}
+                <a href="{{ path("app_booking_new") }}">Booking</a>
                 <a href="{{ path('user_show', {'id': app.user.id}) }}">{{ app.user.firstname }}</a>
                 <a href="{{ path('app_logout') }}">Logout</a>
                 <a href="{{ path('app_basket') }}"><i class="fa fa-shopping-basket" style="font-size: 22px"></i></a>
